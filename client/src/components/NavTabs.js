@@ -53,6 +53,26 @@ const NavTabs = () => (
         Options
       </Link>
     </li>
+    <li className="nav-item">
+      <Link
+        to="/SignIn"
+        className={
+          window.location.pathname === "/SignIn" ? "nav-link active" : "nav-link"
+        }
+      >
+        Sign In
+      </Link>
+    </li>
+    <li className="nav-item">
+      <Link
+        to="/workoutHistory"
+        className={
+          window.location.pathname === "/workoutHistory" ? "nav-link active" : "nav-link"
+        }
+      >
+        Workout History
+      </Link>
+    </li>
   </ul>
 );
 
