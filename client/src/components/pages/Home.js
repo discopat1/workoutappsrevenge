@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "../Signinform/Form"
+
 
 const Home = () => (
   <div>
@@ -7,7 +7,6 @@ const Home = () => (
     <p>
       Hi, I'm home.
     </p>
-    <Form />
   </div>
 );
 
