@@ -23,7 +23,7 @@ class ORForm extends Component {
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    if (!this.state.pushups || !this.state.squats) {
+    if (!this.state.bench || !this.state.squat) {
       alert("Fill out your one rep max please!");
     } else {
       alert("Good Job!");
@@ -33,10 +33,6 @@ class ORForm extends Component {
       bench: "",
       squat: "",
     });
-  };
-
-  handleFormSubmit = event => {
-    event.preventDefault();
     if (this.state.bench && this.state.squat) {
       API.saveOneRep({
         bench: this.state.bench,
@@ -45,6 +41,8 @@ class ORForm extends Component {
         .catch(err => console.log(err));
     }
   };
+
+  
 
   render() {
     // Notice how each input has a `value`, `name`, and `onChange` prop

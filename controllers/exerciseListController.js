@@ -5,7 +5,16 @@ module.exports = {
   findAll: function(req, res) {
     db.ExerciseList
       .find(req.query)
-      // .sort({ date: -1 })
+      .then(dbModel => {
+          console.log("RETURNED: ", dbModel)
+          res.json(dbModel)
+      })
+      .catch(err => res.status(422).json(err));
+  },
+
+  create: function(req, res) {
+    db.ExerciseList
+      .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -52,13 +61,20 @@ module.exports = {
       squatMultiplier();
 
       const oneRepObj = {
-          Bench: pushupMax,
-          Squat: squatMax
+          bench: pushupMax,
+          squat: squatMax
       };
       console.log("------------", oneRepObj);
       
   res.json(oneRepObj)})
   .catch(err => res.status(422).json(err));
+  },
+
+  createOneRep: function(req, res) {
+    db.SelfAssess
+      .create(req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   },
 
   actualOneRep: function(req, res) {
@@ -75,4 +91,4 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   }
 
-}
+};
