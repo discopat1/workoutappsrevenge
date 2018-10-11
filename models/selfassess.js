@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const oneRepSchema = new Schema({
+const maxRepSchema = new Schema({
   bench: { type: Number, required: true },
   squat: { type: Number, required: true }
 });
 
-const OneRepMax = mongoose.model("OneRepMax", oneRepSchema);
+const SelfAssess = mongoose.model("SelfAssess", maxRepSchema);
 
-module.exports = OneRepMax;
+module.exports = SelfAssess;

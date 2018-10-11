@@ -9,7 +9,10 @@ export default {
   getExercises: function() {
     return axios.get("/api/exercises");
   },
-  saveOneRep: function(oneRepData) {
-    return axios.post("/api/exercises/OneRep", oneRepData);
+  estimateOneRep: function() {
+    return axios.post("/api/exercises/OneRep")
+  },
+  actualOneRep: function() {
+    return axios.post("/api/exercises/ActualOneRep");
   }
 };

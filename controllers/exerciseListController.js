@@ -26,8 +26,8 @@ module.exports = {
       // Multiply body weight by incremental number depending on the number of repetions
       console.log("===========", req.body)
       const maxReps = {
-          pushups: req.body.pushups,
-          squats: req.body.squats
+          pushups: req.body.bench,
+          squats: req.body.squat
       };
       const bodyweight = req.body.weight;
       const pushupBodyweight = req.body.weight * 0.64;
@@ -64,28 +64,30 @@ module.exports = {
           bench: pushupMax,
           squat: squatMax
       };
-      console.log("------------", oneRepObj);
-      
-  res.json(oneRepObj)})
+      console.log("------------", oneRepObj)
+      db.OneRepMax.create(oneRepObj)
+})
+  .then(dbModel => res.json(dbModel))
   .catch(err => res.status(422).json(err));
   },
 
-  createOneRep: function(req, res) {
-    db.SelfAssess
+  actualOneRep: function(req, res) {
+    db.OneRepMax
       .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-
-  actualOneRep: function(req, res) {
-    db.SelfAssess
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
-      .then(dbModel => res.json(dbModel))
+  findAllOneReps: function(req, res) {
+    db.OneRepMax
+      .find(req.query)
+      .then(dbModel => {
+          console.log(dbModel)
+          res.json(dbModel)
+      })
       .catch(err => res.status(422).json(err));
   },
-
   findOneRep: function(req, res) {
-    db.SelfAssess
+    db.OneRepMax
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));

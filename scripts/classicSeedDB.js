@@ -507,7 +507,7 @@ const exerciseSeed = [
             "cable machine",
             "kettlebell",
             "resistance band",
-            "ghd bench"
+            "bench"
         ],
         style: "compound"
     },
@@ -521,7 +521,7 @@ const exerciseSeed = [
         equipment: [
             "gymnastic rings",
             "playground",
-            "pullup bar"
+            "pull-up bar"
         ],
         style: "compound"
     },
@@ -546,23 +546,228 @@ const exerciseSeed = [
         name: "Seated rows",
         bodyparts: [
             "posterior chain",
-            "legs",
             "back",
             "biceps"
         ],
         equipment: [
-            "barbell",
-            "dumbell",
             "cable machine",
-            "kettlebell",
             "resistance band"
         ],
         style: "compound"
     },
+    {
+        name: "GHD rows",
+        bodyparts: [
+            "posterior chain",
+            "back",
+            "biceps"
+        ],
+        equipment: [
+            "dumbell",
+            "kettlebell",
+            "barbell",
+            "resistance band",
+            "ghd bench"
+        ],
+        style: "compound"
+    },
+    {
+        name: "Isometric YWT's",
+        bodyparts: [
+            "posterior chain",
+            "back",
+            "shoulders"
+        ],
+        equipment: [
+            "dumbell",
+            "kettlebell",
+            "resistance band",
+            "ghd bench",
+            "bench"
+        ],
+        style: "accessory"
+    },
+    {
+        name: "Overhand pull-ups",
+        bodyparts: [
+            "posterior chain",
+            "back",
+            "biceps"
+        ],
+        equipment: [
+            "pull-up bar",
+            "gymnastic rings",
+            "playground"
+        ],
+        style: "compound"
+    },
+    {
+        name: "Underhand pull-ups",
+        bodyparts: [
+            "posterior chain",
+            "back",
+            "biceps"
+        ],
+        equipment: [
+            "pull-up bar",
+            "gymnastic rings",
+            "playground"
+        ],
+        style: "compound"
+    },
+    {
+        name: "Switch-grip pull-ups",
+        bodyparts: [
+            "posterior chain",
+            "back",
+            "biceps"
+        ],
+        equipment: [
+            "pull-up bar",
+            "gymnastic rings",
+            "playground"
+        ],
+        style: "compound"
+    },
+    {
+        name: "Internal rotater pull-ups",
+        bodyparts: [
+            "posterior chain",
+            "back",
+            "biceps"
+        ],
+        equipment: [
+            "gymnastic rings",
+        ],
+        style: "compound"
+    },
+    {
+        name: "neutral-grip pull-ups",
+        bodyparts: [
+            "posterior chain",
+            "back",
+            "biceps"
+        ],
+        equipment: [
+            "pull-up bar",
+            "gymnastic rings",
+            "playground"
+        ],
+        style: "compound"
+    },
+    {
+        name: "Skull crushers",
+        bodyparts: [
+            "triceps"
+        ],
+        equipment: [
+            "dumbell",
+            "barbell",
+            "kettlebell",
+            "resistance band",
+            "cable machine"
+        ],
+        style: "accessory"
+    },
+    {
+        name: "Tricep extensions",
+        bodyparts: [
+            "triceps"
+        ],
+        equipment: [
+            "dumbell",
+            "barbell",
+            "kettlebell",
+            "resistance band",
+            "cable machine"
+        ],
+        style: "accessory"
+    },
+    {
+        name: "Tricep pushdowns",
+        bodyparts: [
+            "triceps"
+        ],
+        equipment: [
+            "resistance band",
+            "cable machine"
+        ],
+        style: "accessory"
+    },
+    {
+        name: "Bench dips",
+        bodyparts: [
+            "triceps"
+        ],
+        equipment: [
+            "bench"
+        ],
+        style: "accessory"
+    },
+    {
+        name: "V-ups",
+        bodyparts: [
+            "core"
+        ],
+        equipment: [
+            
+        ],
+        style: "accessory"
+    },
+    {
+        name: "Windsheild wipers",
+        bodyparts: [
+            "core"
+        ],
+        equipment: [
+            
+        ],
+        style: "accessory"
+    },
+    {
+        name: "Hanging windsheild wipers",
+        bodyparts: [
+            "core"
+        ],
+        equipment: [
+            "pull-up bar",
+            "playground"
+        ],
+        style: "accessory"
+    },
+    {
+        name: "Russian twists",
+        bodyparts: [
+            "core"
+        ],
+        equipment: [
+            "dumbell",
+            "medball",
+            "kettlebell",
+        ],
+        style: "accessory"
+    },
+    {
+        name: "Plank supermans",
+        bodyparts: [
+            "core"
+        ],
+        equipment: [
+            
+        ],
+        style: "accessory"
+    },
+    {
+        name: "Plank plate slides",
+        bodyparts: [
+            "core"
+        ],
+        equipment: [
+            "weight plate"
+        ],
+        style: "accessory"
+    },
 ];
-
-
-
 
 db.ExerciseList
   .remove({})
