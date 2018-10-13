@@ -642,7 +642,7 @@ const exerciseSeed = [
         style: "compound"
     },
     {
-        name: "neutral-grip pull-ups",
+        name: "Neutral-grip pull-ups",
         bodyparts: [
             "posterior chain",
             "back",

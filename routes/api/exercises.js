@@ -13,5 +13,8 @@ router.route("/OneRep")
 router.route("/ActualOneRep/")
     .post(exerciseListController.actualOneRep)
     .get(exerciseListController.findOneRep)
+// Route to choose exercises based on chosen bodyparts
+router.route("/SelectClassic")
+    .post(exerciseListController.selectClassic)
 
 module.exports = router;
