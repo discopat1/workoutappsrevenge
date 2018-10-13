@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import "./Form.css";
+import API from "../utils/API";
 
 class SAForm extends Component {
   // Setting the component's initial state
   state = {
     pushups: "",
     squats: "",
+    weight: ""
   };
 
   handleInputChange = event => {
@@ -20,9 +22,10 @@ class SAForm extends Component {
   };
 
   handleFormSubmit = event => {
+    console.log(this.state)
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    if (!this.state.pushups || !this.state.squats) {
+    if (!this.state.pushups || !this.state.squats || !this.state.weight) {
       alert("Fill out your max reps please!");
     } else {
       alert("Good Job!");
@@ -31,7 +34,18 @@ class SAForm extends Component {
     this.setState({
       pushups: "",
       squats: "",
+      weight: ""
     });
+    
+    
+    if (this.state.pushups && this.state.squats && this.state.weight) {
+      API.estimateOneRep({
+        bench: this.state.pushups,
+        squat: this.state.squats,
+        weight: this.state.weight
+      })
+        .catch(err => console.log(err));
+    }
   };
 
   render() {
@@ -55,6 +69,13 @@ class SAForm extends Component {
             onChange={this.handleInputChange}
             type="text"
             placeholder="Max squats!"
+          />
+          <input
+            value={this.state.weight}
+            name="weight"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="Your bodyweight!"
           />
           <button onClick={this.handleFormSubmit}>Submit</button>
         </form>

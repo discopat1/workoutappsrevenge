@@ -7,9 +7,12 @@ import axios from "axios";
 export default {
   // Gets all exercises
   getExercises: function() {
-    return axios.get("/api/exercises");
+    return axios.get("http://localhost:3001/api/exercises");
   },
-  saveOneRep: function(oneRepData) {
-    return axios.post("/api/exercises/OneRep", oneRepData);
+  estimateOneRep: function(formData) {
+    return axios.post("/api/exercises/OneRep", formData)
+  },
+  actualOneRep: function(formData) {
+    return axios.post("/api/exercises/ActualOneRep", formData);
   }
 };
