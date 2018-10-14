@@ -1,6 +1,6 @@
 import React from "react";
 
-const WorkoutOptions = () => (
+const WODoptions = () => (
   <div>
     <h1>Workout options</h1>
     <p>
@@ -9,4 +9,4 @@ const WorkoutOptions = () => (
   </div>
 );
 
-export default WorkoutOptions;
+export default WODoptions;

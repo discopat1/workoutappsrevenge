@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "./Form.css";
+import "./SIModalcurrent.css";
 
-class Form extends Component {
+class SIModalcurrent extends Component {
   // Setting the component's initial state
   state = {
     firstName: "",
@@ -80,4 +80,4 @@ class Form extends Component {
   }
 }
 
-export default Form;
+export default SIModalcurrent;

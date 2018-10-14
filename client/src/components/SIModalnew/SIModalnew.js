@@ -1,20 +1,22 @@
 import React, { Component } from "react";
-import "./SelfAssessForm.css";
-import API from "../utils/API";
+import "./SIModalnew.css";
 
-class SAForm extends Component {
+class SIModalnew extends Component {
   // Setting the component's initial state
   state = {
-    pushups: "",
-    squats: "",
-    weight: ""
+    firstName: "",
+    lastName: "",
+    password: ""
   };
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
     let value = event.target.value;
     const name = event.target.name;
-    
+
+    if (name === "password") {
+      value = value.substring(0, 15);
+    }
     // Updating the input's state
     this.setState({
       [name]: value
@@ -22,30 +24,24 @@ class SAForm extends Component {
   };
 
   handleFormSubmit = event => {
-    console.log(this.state)
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    if (!this.state.pushups || !this.state.squats || !this.state.weight) {
-      alert("Fill out your max reps please!");
+    if (!this.state.firstName || !this.state.lastName) {
+      alert("Fill out your first and last name please!");
+    } else if (this.state.password.length < 6) {
+      alert(
+        `Choose a more secure password ${this.state.firstName} ${this.state
+          .lastName}`
+      );
     } else {
-      alert("Good Job!");
+      alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
     }
 
     this.setState({
-      pushups: "",
-      squats: "",
-      weight: ""
+      firstName: "",
+      lastName: "",
+      password: ""
     });
-    
-    
-    if (this.state.pushups && this.state.squats && this.state.weight) {
-      API.estimateOneRep({
-        bench: this.state.pushups,
-        squat: this.state.squats,
-        weight: this.state.weight
-      })
-        .catch(err => console.log(err));
-    }
   };
 
   render() {
@@ -53,29 +49,29 @@ class SAForm extends Component {
     return (
       <div>
         <p>
-          How many reps in one set?
+          Hello {this.state.firstName} {this.state.lastName}
         </p>
         <form className="form">
           <input
-            value={this.state.pushups}
-            name="pushups"
+            value={this.state.firstName}
+            name="firstName"
             onChange={this.handleInputChange}
             type="text"
-            placeholder="Max pushups!"
+            placeholder="First Name"
           />
           <input
-            value={this.state.squats}
-            name="squats"
+            value={this.state.lastName}
+            name="lastName"
             onChange={this.handleInputChange}
             type="text"
-            placeholder="Max squats!"
+            placeholder="Last Name"
           />
           <input
-            value={this.state.weight}
-            name="weight"
+            value={this.state.password}
+            name="password"
             onChange={this.handleInputChange}
-            type="text"
-            placeholder="Your bodyweight!"
+            type="password"
+            placeholder="Password"
           />
           <button onClick={this.handleFormSubmit}>Submit</button>
         </form>
@@ -84,4 +80,4 @@ class SAForm extends Component {
   }
 }
 
-export default SAForm;
+export default SIModalnew;
