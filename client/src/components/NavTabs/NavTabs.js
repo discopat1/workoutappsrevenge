@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const NavTabs = () => (
+
+
+// This is the splash page **************************
   <ul className="nav nav-tabs">
     <li className="nav-item">
       <Link
@@ -10,9 +13,11 @@ const NavTabs = () => (
           window.location.pathname === "/" ? "nav-link active" : "nav-link"
         }
       >
-        Home
+        Splash
       </Link>
     </li>
+
+{/* This is the self assessment page ************************** */}
     <li className="nav-item">
       <Link
         to="/selfassess"
@@ -23,19 +28,23 @@ const NavTabs = () => (
         Self Assessment
       </Link>
     </li>
+
+{/* This is the Dashboard  page ************************** */}
     <li className="nav-item">
       <Link
-        to="/userprofile"
+        to="/dashboard"
         className={
-          window.location.pathname === "/userprofile" ? "nav-link active" : "nav-link"
+          window.location.pathname === "/dashboard" ? "nav-link active" : "nav-link"
         }
       >
-        User Profile
+        Dashboard
       </Link>
     </li>
+
+{/* This is workout active ************************** */}
     <li className="nav-item">
       <Link
-        to="/wod"
+        to="/wodactive"
         className={
           window.location.pathname === "/wod" ? "nav-link active" : "nav-link"
         }
@@ -43,16 +52,20 @@ const NavTabs = () => (
         Today's Workout
       </Link>
     </li>
+
+{/* This is the workout options ************************** */}
     <li className="nav-item">
       <Link
-        to="/workoutoptions"
+        to="/wodoptions"
         className={
           window.location.pathname === "/workoutoptions" ? "nav-link active" : "nav-link"
         }
       >
-        Options
+        Workout Options
       </Link>
     </li>
+
+{/* This is the sign in page ************************** */}
     <li className="nav-item">
       <Link
         to="/SignIn"
@@ -63,6 +76,9 @@ const NavTabs = () => (
         Sign In
       </Link>
     </li>
+
+    {/* This is the workout history page ************************** */}
+
     <li className="nav-item">
       <Link
         to="/workoutHistory"
