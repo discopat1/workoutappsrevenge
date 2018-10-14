@@ -8,13 +8,19 @@ router.route("/")
 // Route for one rep max through self assessment api/exercises/OneRep
 router.route("/OneRep")
     .post(exerciseListController.estimateOneRep)
-    .get(exerciseListController.findAllOneReps);
-// Route to update one rep through input or get one rep info for suggested weight api/exercises/OneRep/:id
-router.route("/ActualOneRep/")
-    .post(exerciseListController.actualOneRep)
+// Route to create one rep through input 
+router.route("/ActualOneRep")
+    .post(exerciseListController.oneRepWithProfile)
+    .get(exerciseListController.findAllOneReps)
     .get(exerciseListController.findOneRep)
 // Route to choose exercises based on chosen bodyparts
 router.route("/SelectClassic")
     .post(exerciseListController.selectClassic)
-
+// User profile routes
+router.route("/Profile")
+    .post(exerciseListController.createProfile)
+router.route("/Profile/:id")
+    .get(exerciseListController.findProfilebyId)
+router.route("/PopulatedUser")
+    .get(exerciseListController.getPopulatedUser)
 module.exports = router;

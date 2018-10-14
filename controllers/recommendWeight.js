@@ -1,6 +1,6 @@
-const controller = require("./exerciseListController")
+const controller = require("./exerciseListController");
 
-function findWeight(data) {
+const findWeight = function(data) {
     switch(data.name) {
         case "Deadlift":
         weight = controller.findOneRep.squat * 1.2
@@ -153,3 +153,5 @@ function findWeight(data) {
         weight = "No weight"
     }
 };
+
+module.exports = findWeight;

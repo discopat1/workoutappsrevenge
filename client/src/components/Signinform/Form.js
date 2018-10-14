@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import "./Form.css";
+import API from "../utils/API";
 
 class Form extends Component {
   // Setting the component's initial state
   state = {
-    firstName: "",
-    lastName: "",
+    name: "",
+    email: "",
     password: ""
   };
 
@@ -26,22 +27,29 @@ class Form extends Component {
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    if (!this.state.firstName || !this.state.lastName) {
-      alert("Fill out your first and last name please!");
+    if (!this.state.email || !this.state.password) {
+      alert("Fill out your user info please!");
     } else if (this.state.password.length < 6) {
       alert(
-        `Choose a more secure password ${this.state.firstName} ${this.state
-          .lastName}`
+        `Choose a more secure password ${this.state.name}`
       );
     } else {
-      alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
+      alert(`Hello ${this.state.name}`);
     }
 
     this.setState({
-      firstName: "",
-      lastName: "",
+      name: "",
+      email: "",
       password: ""
     });
+    if (this.state.name && this.state.email && this.state.password) {
+      API.createProfile({
+        name: this.state.name,
+        email: this.state.email,
+        password: this.state.password
+      })
+        .catch(err => console.log(err));
+    }
   };
 
   render() {
@@ -53,18 +61,18 @@ class Form extends Component {
         </p>
         <form className="form">
           <input
-            value={this.state.firstName}
-            name="firstName"
+            value={this.state.name}
+            name="name"
             onChange={this.handleInputChange}
             type="text"
-            placeholder="First Name"
+            placeholder="Name"
           />
           <input
-            value={this.state.lastName}
-            name="lastName"
+            value={this.state.email}
+            name="email"
             onChange={this.handleInputChange}
             type="text"
-            placeholder="Last Name"
+            placeholder="email"
           />
           <input
             value={this.state.password}
