@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "../Signinform/Form"
+import Form from "../Signinform"
 
 const SignIn = () => (
   <div>
