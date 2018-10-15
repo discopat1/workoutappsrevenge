@@ -8,6 +8,7 @@ const userProfileSchema = new Schema({
   oneRepMax:  { type: Schema.Types.ObjectId, ref: "OneRepMax"}
 });
 
+
 const UserProfile = mongoose.model("UserProfile", userProfileSchema);
 
 module.exports = UserProfile;
