@@ -1,6 +1,6 @@
 import React from "react";
 
-const Wod = () => (
+const WODactive = () => (
   <div>
     <h1>Here's your workout</h1>
     <p>
@@ -9,4 +9,4 @@ const Wod = () => (
   </div>
 );
 
-export default Wod;
+export default WODactive;
