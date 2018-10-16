@@ -45,8 +45,8 @@ var controller = {
                     shuffleArray(dbCompound)
                     shuffleArray(dbAccessory)
                     res.json({dbCompound, dbAccessory});
-                    findWeight(dbCompound)
-                    findWeight(dbAccessory)
+                    // findWeight(dbCompound)
+                    // findWeight(dbAccessory)
                 })
                 .catch(err => res.status(422).json(err));
         }
@@ -110,15 +110,18 @@ var controller = {
                     squat: squatMax
                 };
                 console.log("------------", oneRepObj)
-                db.OneRepMax.create(oneRepObj)
+                return db.OneRepMax.create(oneRepObj)
+                
             })
             .then(function(dbOneRep) {
+                
                 // If a one rep max was created successfully, find one User profile  and push the new one rep's _id to the User's one rep field
                 // { new: true } tells the query that we want it to return the updated User profile -- it returns the original by default
                 // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
                 return db.UserProfile.findOneAndUpdate({ _id: req.params.id }, { $set: { oneRepMax: dbOneRep._id } }, { new: true });
             })
             .then(function(dbUserProfile) {
+                console.log("--==--==-=", dbUserProfile)
                 // If the User Profile was updated successfully, send it back to the client
                 res.json(dbUserProfile);
             })
