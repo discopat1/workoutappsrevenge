@@ -15,7 +15,7 @@ router.route("/ActualOneRep")
 router.route("/ActualOneRep/:id")
     .get(exerciseListController.findOneRep)
 // Route to choose exercises based on chosen bodyparts
-router.route("/SelectClassic")
+router.route("/SelectClassic/")
     .post(exerciseListController.selectClassic)
 // User profile routes
 router.route("/Profile")
