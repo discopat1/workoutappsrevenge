@@ -7,11 +7,13 @@ import Dash from "./components/Dashboard";
 import SAForm from "./components/SelfAssessForm";
 import WODoptions from "./components/WODactive";
 import WODactive from "./components/WODactive";
+import Navbar from "./components/Navbar";
 
 const App = () => (
   <Router>
     <React.Fragment>
         <div>
+        <Navbar />
           <Route exact path="/" component={Splash} />
           <Route exact path="/dashboard" component={Dash} />
           <Route exact path="/selfassess" component={SAForm} />
