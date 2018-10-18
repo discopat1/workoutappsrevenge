@@ -6,7 +6,12 @@ const userProfileSchema = new Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true, unique: true },
   oneRepMax:  { type: Schema.Types.ObjectId, ref: "OneRepMax" },
-  workoutHistory: {type: Schema.Types.ObjectId, ref: "WorkoutInput" }
+  workoutHistory: [
+    {
+      type: Schema.Types.ObjectId, 
+      ref: "WorkoutInput" 
+    }
+  ]
 });
 
 
