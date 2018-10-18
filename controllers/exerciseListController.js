@@ -42,14 +42,20 @@ var controller = {
                     style: "accessory"
                 })
                 .then(dbAccessory => {
+                    console.log("dbAccessory====:", dbAccessory)
                     shuffleArray(dbCompound)
                     shuffleArray(dbAccessory)
-                    findWeight(req.params.id, dbCompound)
-                    findWeight(req.params.id, dbAccessory)
-                    console.log("dbcompund====:", dbCompound)
-                    res.json({dbCompound, dbAccessory});
+                    return findWeight(req.params.id, dbAccessory)
+                        .then(() => findWeight(req.params.id, dbCompound))
+                        .then(() => {
+                            console.log("dbcompund====:", dbCompound)
+                            res.json({dbCompound, dbAccessory})
+                    })
                 })
-                .catch(err => res.status(422).json(err));
+                .catch(err => {
+                    console.error(err);
+                    res.status(422).json(err)
+                });
         }
         
         function shuffleArray(array) {
