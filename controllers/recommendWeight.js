@@ -4,14 +4,11 @@ const findOneRep = async id => db.OneRepMax.findById(id);
 
 
 const findWeight = async function(id, data) {
-    console.log('ID========', id)
     for (var i = 0; i < data.length; i++) {
        console.log('ID========', id)
        const datum = data[i];
-       
        const { name } = data[i];
        const oneRep = await findOneRep(id);
-       console.log("one rep================", oneRep);
         switch(name) {
             case "Deadlift":
             datum.weight = oneRep.squat * 1.2
@@ -149,21 +146,20 @@ const findWeight = async function(id, data) {
             datum.weight = oneRep.bench * 0.3
             break;
             case "Tricep extensions":
-            datum.weight = oneRep.squat * 0.85
+            datum.weight = oneRep.bench * 0.3
             break;
             case "Tricep pushdowns":
-            datum.weight = oneRep.squat * 0.85
+            datum.weight = oneRep.bench * 0.3
             break;
             case "Bench dips":
-            datum.weight = oneRep.squat * 0.85
+            datum.weight = oneRep.bench * 0.8
             break;
             case "Plank plate slides":
-            datum.weight = oneRep.squat * 0.85
+            datum.weight = oneRep.squat * 0.20
             break;
             default:
             datum.weight = "undefined"
         }
-        // console.log("one rep================", oneRep);
         console.log("data  ========", data);
         console.log("datum ========", datum)
     } // end for

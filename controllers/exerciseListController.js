@@ -33,7 +33,6 @@ var controller = {
                 .then(dbCompound => {
                     selectAccessory(dbCompound)
                 })
-                //.catch(err => res.status(422).json(err));
         }
         function selectAccessory(dbCompound) {
             db.ExerciseList
@@ -160,7 +159,7 @@ var controller = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
-
+    
     findProfilebyId: function (req, res) {
         db.UserProfile
             .findById(req.params.id)
@@ -169,7 +168,7 @@ var controller = {
     },
     // POST route for saving a one rep max to the db and associating it with a User profile
     // Create a new one rep max in the database
-    populateProfilebyId: function (req, res) {
+    oneRepInput: function (req, res) {
         db.OneRepMax.create(req.body)
         .then(function(dbOneRep) {
             // If a one rep max was created successfully, find one User profile  and push the new one rep's _id to the User's one rep field
@@ -186,12 +185,32 @@ var controller = {
             res.json(err);
         });
     },
+    // Route to create workout input and populate it into user profile
+    createWorkoutInput: function (req, res) {
+        console.log("req=====",req.body)
+        db.WorkoutInput.create(req.body)
+        .then(function(dbWorkoutInput) {
+            // If a one rep max was created successfully, find one User profile  and push the new one rep's _id to the User's one rep field
+            // { new: true } tells the query that we want it to return the updated User profile -- it returns the original by default
+            // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
+            return db.UserProfile.findOneAndUpdate({ _id: req.params.id }, { $set: { workoutHistory: dbWorkoutInput._id } }, { new: true });
+        })
+        .then(function(dbUserProfile) {
+            // If the User Profile was updated successfully, send it back to the client
+            res.json(dbUserProfile);
+        })
+        .catch(function(err) {
+            // If an error occurs, send it back to the client
+            res.json(err);
+        });
+    },
     // Route to see what user profile looks like WITH populating
     getPopulatedUser: function(req, res) {
         // Using our User profile model, "find" every user in our db and populate them with associated one rep max
         db.UserProfile.find({})
         // Specify that we want to populate the retrieved User profiles with associated one rep max
         .populate("oneRepMax")
+        .populate("workoutHistory")
         .then(function(dbUserProfile) {
             // If any Libraries are found, send them to the client with any associated Books
             res.json(dbUserProfile);
