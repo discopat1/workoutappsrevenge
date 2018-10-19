@@ -44,8 +44,8 @@ var controller = {
                     console.log("dbAccessory====:", dbAccessory)
                     shuffleArray(dbCompound)
                     shuffleArray(dbAccessory)
-                    return findWeight(req.params.id, dbAccessory)
-                        .then(() => findWeight(req.params.id, dbCompound))
+                    return findWeight(req.params.id, dbAccessory, req.body.purpose) // going to add req.body.purpose to parameters
+                        .then(() => findWeight(req.params.id, dbCompound, req.body.purpose))
                         .then(() => {
                             console.log("dbcompund====:", dbCompound)
                             res.json({dbCompound, dbAccessory})
