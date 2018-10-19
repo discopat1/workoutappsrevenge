@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 // custom components we created
 import Splash from "./components/SplashPage";
 import Dash from "./components/Dashboard";
-import SAForm from "./components/SelfAssessForm";
+import Assessment from "./components/OneRepAssessPage";
 import WODoptions from "./components/WODactive";
 import WODactive from "./components/WODactive";
 import Navbar from "./components/Navbar";
@@ -16,7 +16,7 @@ const App = () => (
         <Navbar />
           <Route exact path="/" component={Splash} />
           <Route exact path="/dashboard" component={Dash} />
-          <Route exact path="/selfassess" component={SAForm} />
+          <Route exact path="/selfassess" component={Assessment} />
           <Route exact path="/wodoptions" component={WODoptions} />
           <Route exact path="/wodactive" component={WODactive} />
         </div>
