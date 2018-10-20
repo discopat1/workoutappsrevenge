@@ -13,7 +13,10 @@ class Equipment extends React.Component {
       pullupBar: false,
       resistanceBand: false,
       cableMachine: false,
-      legExtension: false
+      legExtension: false,
+      gymnasticRings: false,
+      romanChair: false,
+      physioball: false
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -45,7 +48,7 @@ class Equipment extends React.Component {
         </label>
         <br />
         <label>
-        Dumbell
+          Dumbell
           <input
             name="dumbell"
             type="checkbox"
@@ -55,6 +58,34 @@ class Equipment extends React.Component {
         </label>
         <label>
           Barbell
+          <input
+            name="barbell"
+            type="checkbox"
+            value="barbell"
+            checked={this.state.barbell}
+            onChange={this.handleInputChange} />
+        </label>
+        <label>
+          Kettlebell
+          <input
+            name="kettlebell"
+            type="checkbox"
+            value="kettlebell"
+            checked={this.state.kettlebell}
+            onChange={this.handleInputChange} />
+        </label>
+        <br />
+        <label>
+          GHD Bench
+          <input
+            name="dumbell"
+            type="checkbox"
+            value="dumbell"
+            checked={this.state.dumbell}
+            onChange={this.handleInputChange} />
+        </label>
+        <label>
+          Playground
           <input
             name="barbell"
             type="checkbox"
