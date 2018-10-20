@@ -6,7 +6,9 @@ class Equipment extends React.Component {
     this.state = {
       bench: false,
       dumbell: false,
-      barbell: false
+      barbell: false,
+      kettlebell: false,
+      ghdbench: false,
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -49,7 +51,7 @@ class Equipment extends React.Component {
         <label>
           Barbell
           <input
-            name="dumbell"
+            name="barbell"
             type="checkbox"
             value="barbell"
             checked={this.state.barbell}
