@@ -1,5 +1,5 @@
 import React from "react";
-import SAForm from "../SelfAssessForm"
+import SAForm from "../SelfAssessForm";
 import ORForm from "../OneRepForm";
 
 

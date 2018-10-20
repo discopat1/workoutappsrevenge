@@ -20,7 +20,7 @@ class PurposeOptions extends React.Component {
   render() {
     return (
       <form>
-        <h2>How much time do you have?</h2>
+        <h2>What is your goal for today's workout?</h2>
         <label>
           Speed:
           <input

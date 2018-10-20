@@ -1,6 +1,7 @@
 import React from "react";
 import TimeOptions from "../TimeOptionsForm";
 import PurposeOptions from "../PurposeOptions";
+import Equipment from "../Equipment";
 
 const WODoptions = () => (
   <div>
@@ -10,6 +11,7 @@ const WODoptions = () => (
     </p>
   <TimeOptions />
   <PurposeOptions />
+  <Equipment />
   </div>
 );
 
