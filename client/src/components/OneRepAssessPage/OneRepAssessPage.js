@@ -1,6 +1,6 @@
 import React from "react";
-import SAForm from "../SelfAssessForm/SelfAssessForm"
-import ORForm from "../OneRepForm/OneRepForm";
+import SAForm from "../SelfAssessForm"
+import ORForm from "../OneRepForm";
 
 
 const Assessment = () => (

@@ -28,7 +28,8 @@ var controller = {
             db.ExerciseList
                 .find({
                     bodyparts: {$in: req.body.bodyparts},
-                    style: "compound"
+                    style: "compound",
+                    equipment: {$in: req.body.equipment}
                 })
                 .then(dbCompound => {
                     selectAccessory(dbCompound)
@@ -38,16 +39,17 @@ var controller = {
             db.ExerciseList
                 .find({
                     bodyparts: {$in: req.body.bodyparts},
-                    style: "accessory"
+                    style: "accessory",
+                    equipment: {$in: req.body.equipment}
                 })
                 .then(dbAccessory => {
+                    console.log("dbcompund====:", dbCompound)
                     console.log("dbAccessory====:", dbAccessory)
                     shuffleArray(dbCompound)
                     shuffleArray(dbAccessory)
                     return findWeight(req.params.id, dbAccessory, req.body.purpose) // going to add req.body.purpose to parameters
                         .then(() => findWeight(req.params.id, dbCompound, req.body.purpose))
                         .then(() => {
-                            console.log("dbcompund====:", dbCompound)
                             res.json({dbCompound, dbAccessory})
                     })
                 })
@@ -57,6 +59,7 @@ var controller = {
                 });
         }
         
+        
         function shuffleArray(array) {
             for (var i = array.length - 1; i > 0; i--) {
                 var j = Math.floor(Math.random() * (i + 1));
@@ -64,7 +67,9 @@ var controller = {
                 array[i] = array[j];
                 array[j] = temp;
             }
-            return array.length = req.body.time;
+            if (array.length > req.body.time) {
+                return array.length = req.body.time;
+            }
         }
 
         selectCompound();

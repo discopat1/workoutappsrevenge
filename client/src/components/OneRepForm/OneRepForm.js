@@ -34,7 +34,7 @@ class ORForm extends Component {
    handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.bench && this.state.squat) {
-      API.saveOneRep({
+      API.actualOneRep({
         bench: this.state.bench,
         squat: this.state.squat
       })

@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Splash from "./components/SplashPage";
 import Dash from "./components/Dashboard";
 import Assessment from "./components/OneRepAssessPage";
-import WODoptions from "./components/WODactive";
+import WODoptions from "./components/WODoptions";
 import WODactive from "./components/WODactive";
 import Navbar from "./components/Navbar";
 
