@@ -27,5 +27,6 @@ export default {
   },
   postWorkoutInput: function(id, input) {
     return axios.post("/api/exercises/WorkoutHistory/" + id, input)
-  }
+  },logIn: function() {
+    return axios.get("/auth/auth/login");}
 };
