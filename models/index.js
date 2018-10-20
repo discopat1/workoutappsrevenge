@@ -3,6 +3,7 @@ module.exports = {
     SelfAssess: require("./selfassess"),
     OneRepMax: require("./oneRep"),
     Bodyweight: require("./bodyweight"),
-    UserProfile: require("./userProfile")
+    UserProfile: require("./userProfile"),
+    WorkoutInput:require("./workoutInput")
   };
   

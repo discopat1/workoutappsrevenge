@@ -1,173 +1,253 @@
-
-// need to map data since it is array
 const db = require("../models");
 
-const findOneRep = id => db.OneRepMax.findById(id);
+const findOneRep = async id => db.OneRepMax.findById(id);
 
-const findWeight = function(id, data) {
+
+const findWeight = async function(id, data, purpose) {
     for (var i = 0; i < data.length; i++) {
-       console.log("data i========", data[i])
-       //    const name = data[i].name;
-       //    const id = data[i]._id;
+       console.log('ID========', id)
        const datum = data[i];
        const { name } = data[i];
-       const oneRep = findOneRep(id);
-    switch(name) {
-        case "Deadlift":
-        // weights.push(oneRep.squat * 1.2)
-        datum.weight = oneRep.squat * 1.2
-        break;
-        case "Romanian Deadlift":
-        datum.weight = oneRep.squat * 1.1
-        break;
-        case "Single-Leg Romanian Deadlift":
-        datum.weight = oneRep.squat * 0.5
-        break;
-        case "Sumo Deadlift":
-        datum.weight = oneRep.squat * 1.25
-        break;
-        case "Hip Thrusts":
-        datum.weight = oneRep.squat * 0.45
-        break;
-        case "Snatch":
-        datum.weight = oneRep.squat * 0.66
-        break;
-        case "Clean":
-        datum.weight = oneRep.squat * 0.8
-        break;
-        case "Jerk":
-        datum.weight = oneRep.squat * 0.84
-        break;
-        case "Front squat":
-        datum.weight = oneRep.squat * 0.85
-        break;
-        case "Goblet Squat":
-        datum.weight = oneRep.squat * 0.7
-        break;
-        case "Back Squat":
-        datum.weight = oneRep.squat * 1
-        break;
-        case "Pistol Squat":
-        datum.weight = oneRep.squat * 0.45
-        break;
-        case "Cossack Squat":
-        datum.weight = oneRep.squat * 0.45
-        break;
-        case "Reverse Lunge":
-        datum.weight = oneRep.squat * 0.65
-        break;
-        case "Step-ups":
-        datum.weight = oneRep.squat * 0.45
-        break;
-        case "Bulgarian spilt squats":
-        datum.weight = oneRep.squat * 0.45
-        break;
-        case "Calf raises":
-        datum.weight = oneRep.squat * 0.45
-        break;
-        case "Overhead Press":
-        datum.weight = oneRep.bench * 0.6
-        break;
-        case "Lateral raise":
-        datum.weight = oneRep.bench * 0.2
-        break;
-        case "Reverse flys":
-        datum.weight = oneRep.bench * 0.17
-        break;
-        case "Shrugs":
-        datum.weight = oneRep.bench * 1
-        break;
-        case "Facepulls":
-        datum.weight = oneRep.bench * 0.4
-        break;
-        case "External Rotators":
-        datum.weight = oneRep.bench * 0.3
-        break;
-        case "Back extension":
-        datum.weight = oneRep.squat * 0.45
-        break;
-        case "Straight arm pull down":
-        datum.weight = oneRep.bench * 0.75
-        break;
-        case "Bench press":
-        datum.weight = oneRep.bench * 0.1
-        break;
-        case "Incline bench press":
-        datum.weight = oneRep.bench * 0.8
-        break;
-        case "Decline bench press":
-        datum.weight = oneRep.bench * 0.105
-        break;
-        case "Chest flys":
-        datum.weight = oneRep.bench * 0.28
-        break;
-        case "Cable crossover":
-        datum.weight = oneRep.bench * 0.28
-        break;
-        case "Dips":
-        datum.weight = oneRep.squat * 0.105
-        break;
-        case "Bicep curls":
-        datum.weight = oneRep.bench * 0.4
-        break;
-        case "Bentover rows":
-        datum.weight = oneRep.bench * 0.75
-        break;
-        case "One arm rows":
-        datum.weight = oneRep.bench * 0.38
-        break;
-        case "Inverted rows":
-        datum.weight = oneRep.bench * 0.38
-        break;
-        case "Deadrows":
-        datum.weight = oneRep.bench * 0.85
-        break;
-        case "Seated rows":
-        datum.weight = oneRep.bench * 0.65
-        break;
-        case "GHD rows":
-        datum.weight = oneRep.bench * 0.6
-        break;
-        case "Isometric YWT's":
-        datum.weight = oneRep.bench * 0.15
-        break;
-        case "Overhand pull-ups":
-        datum.weight = oneRep.bench * 0.85
-        break;
-        case "Underhand pull-ups":
-        datum.weight = oneRep.bench * 0.90
-        break;
-        case "Switch-grip pull-ups":
-        datum.weight = oneRep.bench * 0.88
-        break;
-        case "Internal rotater pull-ups":
-        datum.weight = oneRep.bench * 0.85
-        break;
-        case "Neutral-grip pull-ups":
-        datum.weight = oneRep.bench * 0.90
-        break;
-        case "Skull crushers":
-        datum.weight = oneRep.bench * 0.3
-        break;
-        case "Tricep extensions":
-        datum.weight = oneRep.squat * 0.85
-        break;
-        case "Tricep pushdowns":
-        datum.weight = oneRep.squat * 0.85
-        break;
-        case "Bench dips":
-        datum.weight = oneRep.squat * 0.85
-        break;
-        case "Plank plate slides":
-        datum.weight = oneRep.squat * 0.85
-        break;
-        default:
-        datum.weight = "undefined"
-    }
-    console.log("one rep================", oneRep);
-    console.log("data  ========", data)
-}
+       const oneRep = await findOneRep(id);
+        switch(name) {
+            case "Deadlift":
+            maxWeight = oneRep.squat * 1.2
+            purposeWeight(maxWeight);
+            break;
+            case "Romanian Deadlift":
+            maxWeight = oneRep.squat * 1.1
+            purposeWeight(maxWeight);
+            break;
+            case "Single-Leg Romanian Deadlift":
+            maxWeight = oneRep.squat * 0.5
+            purposeWeight(maxWeight);
+            break;
+            case "Sumo Deadlift":
+            maxWeight = oneRep.squat * 1.25
+            purposeWeight(maxWeight);
+            break;
+            case "Hip Thrusts":
+            maxWeight = oneRep.squat * 0.45
+            purposeWeight(maxWeight);
+            break;
+            case "Snatch":
+            maxWeight = oneRep.squat * 0.66
+            purposeWeight(maxWeight);
+            break;
+            case "Clean":
+            maxWeight = oneRep.squat * 0.8
+            purposeWeight(maxWeight);
+            break;
+            case "Jerk":
+            maxWeight = oneRep.squat * 0.84
+            purposeWeight(maxWeight);
+            break;
+            case "Front Squat":
+            maxWeight = oneRep.squat * 0.85
+            purposeWeight(maxWeight);
+            break;
+            case "Goblet Squat":
+            maxWeight = oneRep.squat * 0.7
+            purposeWeight(maxWeight);
+            break;
+            case "Back Squat":
+            maxWeight = oneRep.squat * 1
+            purposeWeight(maxWeight);
+            break;
+            case "Pistol Squat":
+            maxWeight = oneRep.squat * 0.45
+            purposeWeight(maxWeight);
+            break;
+            case "Cossack Squat":
+            maxWeight = oneRep.squat * 0.45
+            purposeWeight(maxWeight);
+            break;
+            case "Reverse Lunge":
+            maxWeight = oneRep.squat * 0.65
+            purposeWeight(maxWeight);
+            break;
+            case "Step-ups":
+            maxWeight = oneRep.squat * 0.45
+            purposeWeight(maxWeight);
+            break;
+            case "Bulgarian spilt squats":
+            maxWeight = oneRep.squat * 0.45
+            purposeWeight(maxWeight);
+            break;
+            case "Calf raises":
+            maxWeight = oneRep.squat * 0.45
+            purposeWeight(maxWeight);
+            break;
+            case "Leg Extensions":
+            maxWeight = oneRep.squat * 0.45
+            purposeWeight(maxWeight);
+            break;
+            case "GHD Hamstring Curls":
+            maxWeight = oneRep.squat * 0.35
+            purposeWeight(maxWeight);
+            break;
+            case "Leg Abductions":
+            maxWeight = oneRep.squat * 0.25
+            purposeWeight(maxWeight);
+            break;
+            case "Overhead Press":
+            maxWeight = oneRep.bench * 0.6
+            purposeWeight(maxWeight);
+            break;
+            case "Lateral raise":
+            maxWeight = oneRep.bench * 0.2
+            purposeWeight(maxWeight);
+            break;
+            case "Reverse flys":
+            maxWeight = oneRep.bench * 0.17
+            purposeWeight(maxWeight);
+            break;
+            case "Shrugs":
+            maxWeight = oneRep.bench * 1
+            purposeWeight(maxWeight);
+            break;
+            case "Facepulls":
+            maxWeight = oneRep.bench * 0.4
+            purposeWeight(maxWeight);
+            break;
+            case "External Rotators":
+            maxWeight = oneRep.bench * 0.3
+            purposeWeight(maxWeight);
+            break;
+            case "Back extension":
+            maxWeight = oneRep.squat * 0.45
+            purposeWeight(maxWeight);
+            break;
+            case "Straight arm pull down":
+            maxWeight = oneRep.bench * 0.75
+            purposeWeight(maxWeight);
+            break;
+            case "Bench press":
+            maxWeight = oneRep.bench * 1.0
+            purposeWeight(maxWeight);
+            break;
+            case "Incline bench press":
+            maxWeight = oneRep.bench * 0.8
+            purposeWeight(maxWeight);
+            break;
+            case "Decline bench press":
+            maxWeight = oneRep.bench * 1.05
+            purposeWeight(maxWeight);
+            break;
+            case "Chest flys":
+            maxWeight = oneRep.bench * 0.28
+            purposeWeight(maxWeight);
+            break;
+            case "Cable crossover":
+            maxWeight = oneRep.bench * 0.28
+            purposeWeight(maxWeight);
+            break;
+            case "Dips":
+            maxWeight = oneRep.squat * 0.105
+            purposeWeight(maxWeight);
+            break;
+            case "Barbell curls":
+            maxWeight = oneRep.bench * 0.4
+            purposeWeight(maxWeight);
+            break;
+            case "Dumbell curls":
+            maxWeight = oneRep.bench * 0.4
+            purposeWeight(maxWeight);
+            break;
+            case "Hammer curls":
+            maxWeight = oneRep.bench * 0.4
+            purposeWeight(maxWeight);
+            break;
+            case "Elevator curls":
+            maxWeight = oneRep.bench * 0.4
+            purposeWeight(maxWeight);
+            break;
+            case "Bentover rows":
+            maxWeight = oneRep.bench * 0.75
+            purposeWeight(maxWeight);
+            break;
+            case "One arm rows":
+            maxWeight = oneRep.bench * 0.38
+            purposeWeight(maxWeight);
+            break;
+            case "Inverted rows":
+            maxWeight = oneRep.bench * 0.38
+            purposeWeight(maxWeight);
+            break;
+            case "Deadrows":
+            maxWeight = oneRep.bench * 0.85
+            purposeWeight(maxWeight);
+            break;
+            case "Seated rows":
+            maxWeight = oneRep.bench * 0.65
+            purposeWeight(maxWeight);
+            break;
+            case "GHD rows":
+            maxWeight = oneRep.bench * 0.6
+            purposeWeight(maxWeight);
+            break;
+            case "Isometric YWT's":
+            maxWeight = oneRep.bench * 0.15
+            purposeWeight(maxWeight);
+            break;
+            case "Overhand pull-ups":
+            maxWeight = oneRep.bench * 0.85
+            purposeWeight(maxWeight);
+            break;
+            case "Underhand pull-ups":
+            maxWeight = oneRep.bench * 0.90
+            purposeWeight(maxWeight);
+            break;
+            case "Switch-grip pull-ups":
+            maxWeight = oneRep.bench * 0.88
+            purposeWeight(maxWeight);
+            break;
+            case "Internal rotater pull-ups":
+            maxWeight = oneRep.bench * 0.85
+            purposeWeight(maxWeight);
+            break;
+            case "Neutral-grip pull-ups":
+            maxWeight = oneRep.bench * 0.90
+            purposeWeight(maxWeight);
+            break;
+            case "Skull crushers":
+            maxWeight = oneRep.bench * 0.3
+            purposeWeight(maxWeight);
+            break;
+            case "Tricep extensions":
+            maxWeight = oneRep.bench * 0.3
+            purposeWeight(maxWeight);
+            break;
+            case "Tricep pushdowns":
+            maxWeight = oneRep.bench * 0.3
+            purposeWeight(maxWeight);
+            break;
+            case "Bench dips":
+            maxWeight = oneRep.bench * 0.8
+            purposeWeight(maxWeight);
+            break;
+            case "Plank plate slides":
+            maxWeight = oneRep.squat * 0.20
+            purposeWeight(maxWeight);
+            break;
+            default:
+            maxWeight = "undefined";
+            function purposeWeight(weight) {
+                if (purpose === "speed") {
+                    datum.weight = weight * 0.60
+                } else if (purpose === "strength") {
+                    datum.weight = weight * 0.75
+                } else if (purpose === "sculpt") {
+                    datum.weight = weight * 0.65
+                }
+            }
     
+        } // end switch
+        console.log("data  ========", data);
+        console.log("maxweight", maxWeight)
+        console.log("datum ========", datum.weight)
+    } // end for loop
+    return;
 };
 
 module.exports = findWeight;
