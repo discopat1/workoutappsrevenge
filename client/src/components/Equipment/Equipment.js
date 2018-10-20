@@ -8,7 +8,12 @@ class Equipment extends React.Component {
       dumbell: false,
       barbell: false,
       kettlebell: false,
-      ghdbench: false,
+      ghdBench: false,
+      playground: false,
+      pullupBar: false,
+      resistanceBand: false,
+      cableMachine: false,
+      legExtension: false
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
