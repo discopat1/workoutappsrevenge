@@ -252,6 +252,39 @@ const exerciseSeed = [
         style: "accessory"
     },
     {
+        name: "Leg Extensions",
+        bodyparts: [
+            "legs"
+        ],
+        equipment: [
+            "leg extension machine",
+            "resistance band"
+        ],
+        style: "accessory"
+    },
+    {
+        name: "GHD Hamstring Curls",
+        bodyparts: [
+            "legs",
+            "posterior chain"
+        ],
+        equipment: [
+            "ghd bench"
+        ],
+        style: "accessory"
+    },
+    {
+        name: "Leg Abductions",
+        bodyparts: [
+            "legs",
+            "posterior chain"
+        ],
+        equipment: [
+            "resistance band"
+        ],
+        style: "accessory"
+    },
+    {
         name: "Overhead Press",
         bodyparts: [
             "shoulders",
@@ -352,7 +385,6 @@ const exerciseSeed = [
     {
         name: "Back extension",
         bodyparts: [
-            "shoulders",
             "posterior chain",
             "back"
         ],
@@ -465,15 +497,45 @@ const exerciseSeed = [
         style: "compound"
     },
     {
-        name: "Bicep curls",
+        name: "Barbell curls",
         bodyparts: [
             "biceps"
         ],
         equipment: [
-            "barbell",
+            "barbell"
+        ],
+        style: "accessory"
+    },
+    {
+        name: "Dumbell curls",
+        bodyparts: [
+            "biceps"
+        ],
+        equipment: [
             "dumbell",
-            "cable machine",
+            "kettlebell"
+        ],
+        style: "accessory"
+    },
+    {
+        name: "Hammer curls",
+        bodyparts: [
+            "biceps"
+        ],
+        equipment: [
+            "dumbell",
             "kettlebell",
+            "resistance band"
+        ],
+        style: "accessory"
+    },
+    {
+        name: "Elevator curls",
+        bodyparts: [
+            "biceps"
+        ],
+        equipment: [
+            "cable machine",
             "resistance band"
         ],
         style: "accessory"

@@ -1,16 +1,14 @@
 import React, { Component } from "react";
-import "./SelfAssessForm.css";
+import "./OneRepForm.css";
 import API from "../utils/API";
 
-class SAForm extends Component {
+class ORForm extends Component {
   // Setting the component's initial state
   state = {
     bench: "",
     squat: "",
-    weight: ""
   };
-
-  handleInputChange = event => {
+   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
     let value = event.target.value;
     const name = event.target.name;
@@ -20,62 +18,50 @@ class SAForm extends Component {
       [name]: value
     });
   };
-
-  handleFormSubmit = event => {
-    console.log(this.state)
+   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    if (!this.state.pushups || !this.state.squats || !this.state.weight) {
-      alert("Fill out your max reps please!");
+    if (!this.state.bench || !this.state.squat) {
+      alert("Fill out your one rep max please!");
     } else {
       alert("Good Job!");
     }
-
-    this.setState({
+     this.setState({
       bench: "",
       squat: "",
-      weight: ""
     });
-    
-    
-    if (this.state.bench && this.state.squat && this.state.weight) {
-      API.estimateOneRep({
+  };
+   handleFormSubmit = event => {
+    event.preventDefault();
+    if (this.state.bench && this.state.squat) {
+      API.actualOneRep({
         bench: this.state.bench,
-        squat: this.state.squat,
-        weight: this.state.weight
+        squat: this.state.squat
       })
         .catch(err => console.log(err));
     }
   };
-
-  render() {
+   render() {
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
       <div>
         <p>
-          How many reps in one set?
+          One rep max?
         </p>
         <form className="form">
           <input
             value={this.state.bench}
-            name="pushups"
+            name="bench"
             onChange={this.handleInputChange}
             type="text"
-            placeholder="Max pushups!"
+            placeholder="Bench 1RM!"
           />
           <input
             value={this.state.squat}
-            name="squats"
+            name="squat"
             onChange={this.handleInputChange}
             type="text"
-            placeholder="Max squats!"
-          />
-          <input
-            value={this.state.weight}
-            name="weight"
-            onChange={this.handleInputChange}
-            type="text"
-            placeholder="Your bodyweight!"
+            placeholder="Squat 1RM!"
           />
           <button onClick={this.handleFormSubmit}>Submit</button>
         </form>
@@ -83,5 +69,4 @@ class SAForm extends Component {
     );
   }
 }
-
-export default SAForm;
+ export default ORForm; 

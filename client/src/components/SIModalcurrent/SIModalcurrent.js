@@ -4,8 +4,8 @@ import "./SIModalcurrent.css";
 class SIModalcurrent extends Component {
   // Setting the component's initial state
   state = {
-    firstName: "",
-    lastName: "",
+    name: "",
+    email: "",
     password: ""
   };
 
@@ -26,20 +26,19 @@ class SIModalcurrent extends Component {
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    if (!this.state.firstName || !this.state.lastName) {
-      alert("Fill out your first and last name please!");
+    if (!this.state.name || !this.state.email || !this.state.password) {
+      alert("Fill out your name please!");
     } else if (this.state.password.length < 6) {
       alert(
-        `Choose a more secure password ${this.state.firstName} ${this.state
-          .lastName}`
+        `Choose a more secure password ${this.state.name} `
       );
     } else {
-      alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
+      alert(`Hello ${this.state.name}`);
     }
 
     this.setState({
-      firstName: "",
-      lastName: "",
+      name: "",
+      email: "",
       password: ""
     });
   };
@@ -49,19 +48,19 @@ class SIModalcurrent extends Component {
     return (
       <div>
         <p>
-          Hello {this.state.firstName} {this.state.lastName}
+          Hello {this.state.name} {this.state.email}
         </p>
         <form className="form">
           <input
-            value={this.state.firstName}
-            name="firstName"
+            value={this.state.name}
+            name="name"
             onChange={this.handleInputChange}
             type="text"
             placeholder="First Name"
           />
           <input
-            value={this.state.lastName}
-            name="lastName"
+            value={this.state.email}
+            name="email"
             onChange={this.handleInputChange}
             type="text"
             placeholder="Last Name"

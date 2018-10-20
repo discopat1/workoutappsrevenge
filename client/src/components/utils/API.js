@@ -9,13 +9,22 @@ export default {
   getExercises: function() {
     return axios.get("/api/exercises");
   },
-  estimateOneRep: function(formData) {
-    return axios.post("/api/exercises/OneRep", formData)
+  estimateOneRep: function(id, formData) {
+    return axios.post("/api/exercises/estimateOneRep/" + id, formData)
   },
-  actualOneRep: function(formData) {
-    return axios.post("/api/exercises/ActualOneRep", formData);
+  actualOneRep: function(id, formData) {
+    return axios.post("/api/exercises/ActualOneRep/" + id, formData);
   },
   createProfile: function(formData) {
     return axios.post("/api/exercises/Profile", formData);
+  },
+  getUserProfile: function(id) {
+    return axios.get("/api/exercises/Profile/" + id)
+  },
+  postWorkoutOptions: function(id, input) {
+    return axios.post("/api/exercises/SelectClassic/" + id, input)
+  },
+  postWorkoutInput: function(id, input) {
+    return axios.post("/api/exercises/WorkoutHistory/" + id, input)
   }
 };
