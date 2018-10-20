@@ -9,13 +9,20 @@ export default {
   getExercises: function() {
     return axios.get("/api/exercises");
   },
+
   estimateOneRep: function(formData) {
     return axios.post("/api/exercises/OneRep", formData)
   },
+
   actualOneRep: function(formData) {
     return axios.post("/api/exercises/ActualOneRep", formData);
   },
+
   createProfile: function(formData) {
     return axios.post("/api/exercises/Profile", formData);
+  },
+
+  logIn: function() {
+    return axios.get("/auth/auth/login");
   }
 };
