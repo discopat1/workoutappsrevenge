@@ -7,6 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import TemporaryDrawer from '../Drawer';
 import { Link } from "react-router-dom";
+import API from "../utils/API";
+
 
 
 const styles = {
@@ -39,7 +41,8 @@ function ButtonAppBar(props) {
         WORKOUT APP
       </Link>
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit"
+          onClick={API.logIn}>Login</Button>
         </Toolbar>
       </AppBar>
     </div>
