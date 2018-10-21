@@ -1,23 +1,37 @@
 import React from "react";
 
+const equipmentLabels = {
+      bench: "Bench",
+      dumbell: "Dumbell",
+      barbell: "Barbell",
+      kettlebell: "Kettlebell",
+      ghdBench: "GHD Bench",
+      playground: "Playground",
+      pullupBar: "Pull-up Bar",
+      resistanceBand: "Resistance Bar",
+      cableMachine: "Cable Machine",
+      legExtension: "Leg Extension Machine",
+      gymnasticRings: "Gymnastic Rings",
+      romanChair: "Roman Chair",
+      physioball: "Physioball"
+}
+
+const equipment = ['bench', 'dumbell', 'barbell', 'kettlebell', 'ghdBench', 'playground', 'pullupBar', 'resistanceBand', 'cableMachine', 'legExtension', 'gymnasticRings', 'romanChair', 'physioball'];
+
 class Equipment extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      bench: false,
-      dumbell: false,
-      barbell: false,
-      kettlebell: false,
-      ghdBench: false,
-      playground: false,
-      pullupBar: false,
-      resistanceBand: false,
-      cableMachine: false,
-      legExtension: false,
-      gymnasticRings: false,
-      romanChair: false,
-      physioball: false
-    };
+    // set all equipment checkboxes to false
+    this.state = {};
+    // eslint-disable-next-line react/no-direct-mutation-state
+    equipment.forEach(b => this.state[b] = false);
+
+
+    
+
+
+
+
 
     this.handleInputChange = this.handleInputChange.bind(this);
   }
@@ -33,66 +47,22 @@ class Equipment extends React.Component {
     });
   }
 
+  renderCheckBox = equipment => (
+    <label key={equipment}>
+          {equipmentLabels[equipment]}
+          <input
+            name={equipment}
+            type="checkbox"
+            value={equipment}
+            checked={this.state[equipment]}
+            onChange={this.handleInputChange} />
+        </label>
+    )
   render() {
     return (
       <form>
         <h2>What equipment do you have available?</h2>
-        <label>
-          Bench
-          <input
-            name="bench"
-            type="checkbox"
-            value="bench"
-            checked={this.state.bench}
-            onChange={this.handleInputChange} />
-        </label>
-        <br />
-        <label>
-          Dumbell
-          <input
-            name="dumbell"
-            type="checkbox"
-            value="dumbell"
-            checked={this.state.dumbell}
-            onChange={this.handleInputChange} />
-        </label>
-        <label>
-          Barbell
-          <input
-            name="barbell"
-            type="checkbox"
-            value="barbell"
-            checked={this.state.barbell}
-            onChange={this.handleInputChange} />
-        </label>
-        <label>
-          Kettlebell
-          <input
-            name="kettlebell"
-            type="checkbox"
-            value="kettlebell"
-            checked={this.state.kettlebell}
-            onChange={this.handleInputChange} />
-        </label>
-        <br />
-        <label>
-          GHD Bench
-          <input
-            name="dumbell"
-            type="checkbox"
-            value="dumbell"
-            checked={this.state.dumbell}
-            onChange={this.handleInputChange} />
-        </label>
-        <label>
-          Playground
-          <input
-            name="barbell"
-            type="checkbox"
-            value="barbell"
-            checked={this.state.barbell}
-            onChange={this.handleInputChange} />
-        </label>
+        {equipment.map(this.renderCheckBox)}
       </form>
     );
   }
