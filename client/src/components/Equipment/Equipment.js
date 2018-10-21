@@ -27,12 +27,6 @@ class Equipment extends React.Component {
     equipment.forEach(b => this.state[b] = false);
 
 
-    
-
-
-
-
-
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 

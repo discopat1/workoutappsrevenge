@@ -1,8 +1,8 @@
 import React from "react";
 
 class TimeOptions extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       time: ""
     };
@@ -11,10 +11,7 @@ class TimeOptions extends React.Component {
   }
 
   handleInputChange(event) {
-    
-    this.setState({
-      time: event.target.value
-    });
+    this.props.onTimeChange(event.target.value);
   }
 
   render() {
