@@ -1,1 +1,1 @@
-export { default } from "./BodyParts";
+export { bodyPartLabels, bodyParts } from "./BodyParts";
