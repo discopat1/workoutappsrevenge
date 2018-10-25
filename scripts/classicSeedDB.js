@@ -13,14 +13,14 @@ const exerciseSeed = [
         name: "Deadlift",
         bodyparts: [
             "legs",
-            "posterior chain",
+            "posteriorChain",
             "back"
         ],
         equipment: [
             "barbell",
             "dumbell",
             "kettlebell",
-            "resistance band"
+            "resistanceBand"
         ],
         style: "compound"
     },
@@ -28,14 +28,14 @@ const exerciseSeed = [
         name: "Romanian Deadlift",
         bodyparts: [
             "legs",
-            "posterior chain",
+            "posteriorChain",
             "back"
         ],
         equipment: [
             "barbell",
             "dumbell",
             "kettlebell",
-            "resistance band"
+            "resistanceBand"
         ],
         style: "compound"
     },
@@ -43,14 +43,14 @@ const exerciseSeed = [
         name: "Single-Leg Romanian Deadlift",
         bodyparts: [
             "legs",
-            "posterior chain",
+            "posteriorChain",
             "back"
         ],
         equipment: [
             "barbell",
             "dumbell",
             "kettlebell",
-            "resistance band"
+            "resistanceBand"
         ],
         style: "compound"
     },
@@ -58,14 +58,14 @@ const exerciseSeed = [
         name: "Sumo Deadlift",
         bodyparts: [
             "legs",
-            "posterior chain",
+            "posteriorChain",
             "back"
         ],
         equipment: [
             "barbell",
             "dumbell",
             "kettlebell",
-            "resistance band"
+            "resistanceBand"
         ],
         style: "compound"
     },
@@ -73,15 +73,15 @@ const exerciseSeed = [
         name: "Hip Thrusts",
         bodyparts: [
             "legs",
-            "posterior chain",
+            "posteriorChain",
             "back",
-            "cable machine"
+            "cableMachine"
         ],
         equipment: [
             "barbell",
             "dumbell",
             "kettlebell",
-            "resistance band",
+            "resistanceBand",
             "physioball"
         ],
         style: "compound"
@@ -90,7 +90,7 @@ const exerciseSeed = [
         name: "Snatch",
         bodyparts: [
             "legs",
-            "posterior chain",
+            "posteriorChain",
             "back",
             "shoulders"
         ],
@@ -105,7 +105,7 @@ const exerciseSeed = [
         name: "Clean",
         bodyparts: [
             "legs",
-            "posterior chain",
+            "posteriorChain",
             "back",
         ],
         equipment: [
@@ -119,7 +119,7 @@ const exerciseSeed = [
         name: "Jerk",
         bodyparts: [
             "legs",
-            "posterior chain",
+            "posteriorChain",
             "back",
             "shoulders"
         ],
@@ -140,7 +140,7 @@ const exerciseSeed = [
             "barbell",
             "dumbell",
             "kettlebell",
-            "resistance band"
+            "resistanceBand"
         ],
         style: "compound"
     },
@@ -166,7 +166,7 @@ const exerciseSeed = [
             "barbell",
             "dumbell",
             "kettlebell",
-            "resistance band"
+            "resistanceBand"
         ],
         style: "compound"
     },
@@ -179,7 +179,7 @@ const exerciseSeed = [
             "barbell",
             "dumbell",
             "kettlebell",
-            "resistance band"
+            "resistanceBand"
         ],
         style: "compound"
     },
@@ -199,13 +199,13 @@ const exerciseSeed = [
         name: "Reverse Lunge",
         bodyparts: [
             "legs",
-            "posterior chain"
+            "posteriorChain"
         ],
         equipment: [
             "barbell",
             "dumbell",
             "kettlebell",
-            "resistance band"
+            "resistanceBand"
         ],
         style: "compound"
     },
@@ -213,13 +213,13 @@ const exerciseSeed = [
         name: "Step-ups",
         bodyparts: [
             "legs",
-            "posterior chain"
+            "posteriorChain"
         ],
         equipment: [
             "barbell",
             "dumbell",
             "kettlebell",
-            "resistance band"
+            "resistanceBand"
         ],
         style: "compound"
     },
@@ -227,13 +227,13 @@ const exerciseSeed = [
         name: "Bulgarian spilt squats",
         bodyparts: [
             "legs",
-            "posterior chain"
+            "posteriorChain"
         ],
         equipment: [
             "barbell",
             "dumbell",
             "kettlebell",
-            "resistance band"
+            "resistanceBand"
         ],
         style: "compound"
     },
@@ -241,13 +241,13 @@ const exerciseSeed = [
         name: "Calf raises",
         bodyparts: [
             "legs",
-            "posterior chain"
+            "posteriorChain"
         ],
         equipment: [
             "barbell",
             "dumbell",
             "kettlebell",
-            "resistance band"
+            "resistanceBand"
         ],
         style: "accessory"
     },
@@ -257,8 +257,8 @@ const exerciseSeed = [
             "legs"
         ],
         equipment: [
-            "leg extension machine",
-            "resistance band"
+            "legExtension",
+            "resistanceBand"
         ],
         style: "accessory"
     },
@@ -266,10 +266,10 @@ const exerciseSeed = [
         name: "GHD Hamstring Curls",
         bodyparts: [
             "legs",
-            "posterior chain"
+            "posteriorChain"
         ],
         equipment: [
-            "ghd bench"
+            "ghdBench"
         ],
         style: "accessory"
     },
@@ -277,10 +277,10 @@ const exerciseSeed = [
         name: "Leg Abductions",
         bodyparts: [
             "legs",
-            "posterior chain"
+            "posteriorChain"
         ],
         equipment: [
-            "resistance band"
+            "resistanceBand"
         ],
         style: "accessory"
     },
@@ -307,7 +307,7 @@ const exerciseSeed = [
             "dumbell",
             "kettlebell",
             "resistanceband",
-            "cable machine"
+            "cableMachine"
         ],
         style: "accessory"
     },
@@ -320,7 +320,7 @@ const exerciseSeed = [
             "dumbell",
             "kettlebell",
             "resistanceband",
-            "cable machine"
+            "cableMachine"
         ],
         style: "accessory"
     },
@@ -329,14 +329,14 @@ const exerciseSeed = [
         bodyparts: [
             "shoulders",
             "back",
-            "posterior chain"
+            "posteriorChain"
         ],
         equipment: [
             "dumbell",
             "kettlebell",
             "resistanceband",
-            "cable machine",
-            "ghd bench"
+            "cableMachine",
+            "ghdBench"
         ],
         style: "accessory"
     },
@@ -345,13 +345,13 @@ const exerciseSeed = [
         bodyparts: [
             "shoulders",
             "back",
-            "posterior chain"
+            "posteriorChain"
         ],
         equipment: [
             "dumbell",
             "kettlebell",
             "barbell",
-            "resistance band"
+            "resistanceBand"
         ],
         style: "accessory"
     },
@@ -360,13 +360,13 @@ const exerciseSeed = [
         bodyparts: [
             "shoulders",
             "back",
-            "posterior chain"
+            "posteriorChain"
         ],
         equipment: [
             "gymnastic_rings",
             "ghd_bench",
             "cable_machine",
-            "resistance band"
+            "resistanceBand"
         ],
         style: "accessory"
     },
@@ -378,34 +378,34 @@ const exerciseSeed = [
         equipment: [
             "dumbell",
             "kettlebell",
-            "resistance band"
+            "resistanceBand"
         ],
         style: "accessory"
     },
     {
         name: "Back extension",
         bodyparts: [
-            "posterior chain",
+            "posteriorChain",
             "back"
         ],
         equipment: [
             "dumbell",
             "kettlebell",
-            "resistance band",
-            "ghd bench"
+            "resistanceBand",
+            "ghdBench"
         ],
         style: "accessory"
     },
     {
         name: "Straight arm pull down",
         bodyparts: [
-            "posterior chain",
+            "posteriorChain",
             "back",
             "triceps"
         ],
         equipment: [
-            "cable machine",
-            "resistance band"
+            "cableMachine",
+            "resistanceBand"
         ],
         style: "accessory"
     },
@@ -479,7 +479,7 @@ const exerciseSeed = [
             "chest",
         ],
         equipment: [
-            "cable machine"
+            "cableMachine"
         ],
         style: "accessory"
     },
@@ -490,7 +490,7 @@ const exerciseSeed = [
             "triceps"
         ],
         equipment: [
-            "gymnastic rings",
+            "gymnasticRings",
             "roman chair",
             "playground"
         ],
@@ -525,7 +525,7 @@ const exerciseSeed = [
         equipment: [
             "dumbell",
             "kettlebell",
-            "resistance band"
+            "resistanceBand"
         ],
         style: "accessory"
     },
@@ -535,40 +535,40 @@ const exerciseSeed = [
             "biceps"
         ],
         equipment: [
-            "cable machine",
-            "resistance band"
+            "cableMachine",
+            "resistanceBand"
         ],
         style: "accessory"
     },
     {
         name: "Bentover rows",
         bodyparts: [
-            "posterior chain",
+            "posteriorChain",
             "back",
             "biceps"
         ],
         equipment: [
             "barbell",
             "dumbell",
-            "cable machine",
+            "cableMachine",
             "kettlebell",
-            "resistance band",
+            "resistanceBand",
         ],
         style: "compound"
     },
     {
         name: "One arm rows",
         bodyparts: [
-            "posterior chain",
+            "posteriorChain",
             "back",
             "biceps"
         ],
         equipment: [
             "barbell",
             "dumbell",
-            "cable machine",
+            "cableMachine",
             "kettlebell",
-            "resistance band",
+            "resistanceBand",
             "bench"
         ],
         style: "compound"
@@ -576,21 +576,21 @@ const exerciseSeed = [
     {
         name: "Inverted rows",
         bodyparts: [
-            "posterior chain",
+            "posteriorChain",
             "back",
             "biceps"
         ],
         equipment: [
-            "gymnastic rings",
+            "gymnasticRings",
             "playground",
-            "pull-up bar"
+            "pullupBar"
         ],
         style: "compound"
     },
     {
         name: "Deadrows",
         bodyparts: [
-            "posterior chain",
+            "posteriorChain",
             "legs",
             "back",
             "biceps"
@@ -598,29 +598,29 @@ const exerciseSeed = [
         equipment: [
             "barbell",
             "dumbell",
-            "cable machine",
+            "cableMachine",
             "kettlebell",
-            "resistance band"
+            "resistanceBand"
         ],
         style: "compound"
     },
     {
         name: "Seated rows",
         bodyparts: [
-            "posterior chain",
+            "posteriorChain",
             "back",
             "biceps"
         ],
         equipment: [
-            "cable machine",
-            "resistance band"
+            "cableMachine",
+            "resistanceBand"
         ],
         style: "compound"
     },
     {
         name: "GHD rows",
         bodyparts: [
-            "posterior chain",
+            "posteriorChain",
             "back",
             "biceps"
         ],
@@ -628,23 +628,23 @@ const exerciseSeed = [
             "dumbell",
             "kettlebell",
             "barbell",
-            "resistance band",
-            "ghd bench"
+            "resistanceBand",
+            "ghdBench"
         ],
         style: "compound"
     },
     {
         name: "Isometric YWT's",
         bodyparts: [
-            "posterior chain",
+            "posteriorChain",
             "back",
             "shoulders"
         ],
         equipment: [
             "dumbell",
             "kettlebell",
-            "resistance band",
-            "ghd bench",
+            "resistanceBand",
+            "ghdBench",
             "bench"
         ],
         style: "accessory"
@@ -652,13 +652,13 @@ const exerciseSeed = [
     {
         name: "Overhand pull-ups",
         bodyparts: [
-            "posterior chain",
+            "posteriorChain",
             "back",
             "biceps"
         ],
         equipment: [
-            "pull-up bar",
-            "gymnastic rings",
+            "pullupBar",
+            "gymnasticRings",
             "playground"
         ],
         style: "compound"
@@ -666,13 +666,13 @@ const exerciseSeed = [
     {
         name: "Underhand pull-ups",
         bodyparts: [
-            "posterior chain",
+            "posteriorChain",
             "back",
             "biceps"
         ],
         equipment: [
-            "pull-up bar",
-            "gymnastic rings",
+            "pullupBar",
+            "gymnasticRings",
             "playground"
         ],
         style: "compound"
@@ -680,13 +680,13 @@ const exerciseSeed = [
     {
         name: "Switch-grip pull-ups",
         bodyparts: [
-            "posterior chain",
+            "posteriorChain",
             "back",
             "biceps"
         ],
         equipment: [
-            "pull-up bar",
-            "gymnastic rings",
+            "pullupBar",
+            "gymnasticRings",
             "playground"
         ],
         style: "compound"
@@ -694,25 +694,25 @@ const exerciseSeed = [
     {
         name: "Internal rotater pull-ups",
         bodyparts: [
-            "posterior chain",
+            "posteriorChain",
             "back",
             "biceps"
         ],
         equipment: [
-            "gymnastic rings",
+            "gymnasticRings",
         ],
         style: "compound"
     },
     {
         name: "Neutral-grip pull-ups",
         bodyparts: [
-            "posterior chain",
+            "posteriorChain",
             "back",
             "biceps"
         ],
         equipment: [
-            "pull-up bar",
-            "gymnastic rings",
+            "pullupBar",
+            "gymnasticRings",
             "playground"
         ],
         style: "compound"
@@ -726,8 +726,8 @@ const exerciseSeed = [
             "dumbell",
             "barbell",
             "kettlebell",
-            "resistance band",
-            "cable machine"
+            "resistanceBand",
+            "cableMachine"
         ],
         style: "accessory"
     },
@@ -740,8 +740,8 @@ const exerciseSeed = [
             "dumbell",
             "barbell",
             "kettlebell",
-            "resistance band",
-            "cable machine"
+            "resistanceBand",
+            "cableMachine"
         ],
         style: "accessory"
     },
@@ -751,8 +751,8 @@ const exerciseSeed = [
             "triceps"
         ],
         equipment: [
-            "resistance band",
-            "cable machine"
+            "resistanceBand",
+            "cableMachine"
         ],
         style: "accessory"
     },
@@ -792,7 +792,7 @@ const exerciseSeed = [
             "core"
         ],
         equipment: [
-            "pull-up bar",
+            "pullupBar",
             "playground"
         ],
         style: "accessory"
@@ -825,7 +825,7 @@ const exerciseSeed = [
             "core"
         ],
         equipment: [
-            "weight plate"
+            "weightplate"
         ],
         style: "accessory"
     },

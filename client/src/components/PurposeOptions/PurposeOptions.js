@@ -11,6 +11,11 @@ class PurposeOptions extends React.Component {
   }
 
   handleInputChange(event) {
+    let value = event.target.value;
+    const name = event.target.name;
+    this.setState({
+      [name]: value
+    });
     this.props.onPurposeChange(event.target.value);
   }
 

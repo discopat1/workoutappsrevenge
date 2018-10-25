@@ -11,6 +11,11 @@ class TimeOptions extends React.Component {
   }
 
   handleInputChange(event) {
+    let value = event.target.value;
+    const name = event.target.name;
+    this.setState({
+      [name]: value
+    });
     this.props.onTimeChange(event.target.value);
   }
 
@@ -19,7 +24,7 @@ class TimeOptions extends React.Component {
       <form>
         <h2>How much time do you have?</h2>
         <label>
-          5-15 Minutes:
+          10-15 Minutes:
           <input
             name="time"
             type="radio"

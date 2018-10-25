@@ -7,7 +7,7 @@ const equipmentLabels = {
       ghdBench: "GHD Bench",
       playground: "Playground",
       pullupBar: "Pull-up Bar",
-      resistanceBand: "Resistance Bar",
+      resistanceBand: "Resistance Band",
       cableMachine: "Cable Machine",
       legExtension: "Leg Extension Machine",
       gymnasticRings: "Gymnastic Rings",

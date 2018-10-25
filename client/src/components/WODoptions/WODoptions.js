@@ -4,6 +4,9 @@ import PurposeOptions from "../PurposeOptions";
 import {equipmentLabels, equipment} from "../Equipment";
 import {bodyParts, bodyPartLabels} from "../BodyParts";
 import API from "../utils/API"
+import { pick } from "lodash";
+// import { identity } from "../../../../node_modules/rxjs";
+// import one rep id from UserProfile
 
 
 class WODoptions extends Component {
@@ -61,34 +64,59 @@ class WODoptions extends Component {
             checked={this.state[equipment]}
             onChange={this.handleEquipmentChange} />
         </label>
-    )
-    renderBodyCheckBox = bodyPart => (
-      <label key={bodyPart}>
-            {bodyPartLabels[bodyPart]}
-            <input
-              name={bodyPart}
-              type="checkbox"
-              value={bodyPart}
-              checked={this.state[bodyPart]}
-              onChange={this.handleBodyPartChange} />
-          </label>
-      )
+    );
+  renderBodyCheckBox = bodyPart => (
+    <label key={bodyPart}>
+          {bodyPartLabels[bodyPart]}
+          <input
+            name={bodyPart}
+            type="checkbox"
+            value={bodyPart}
+            checked={this.state[bodyPart]}
+            onChange={this.handleBodyPartChange} />
+        </label>
+    );
+
+  getKeyByTrue = (object) => {
+    const newArray = [];
+    Object.keys(object).forEach(key => {
+      if(object[key]) {
+        newArray.push(key)
+      }
+    })
+      return newArray;
+    };
+
+    
   
   handleFormSubmit = event => {
     event.preventDefault()
-
-
-    API.postWorkoutOptions({
+    
+    // bodyParts = pick(this.state, ['legs', 'chest', 'posteriorChain', 'back', 'biceps', 'triceps', 'shoulders', 'core']);
+    
+    // equipment = pick(this.state, ['bench', 'dumbell', 'barbell', 'kettlebell', 'ghdBench', 'playground', 'pullupBar', 'resistanceBand', 'cableMachine', 'legExtension', 'gymnasticRings', 'romanChair', 'physioball']);
+  
+    API.postWorkoutOptions(
+      // id, 
+      // id = OneRep.id;
+    {
       time: this.state.time,
       purpose: this.state.purpose,
-      bodyparts: this.state.bodyparts,
-      equipment: this.state.equipment
+      bodyparts: this.getKeyByTrue(bodyParts),
+      equipment: this.getKeyByTrue(equipment)
     })
-    
+    .catch(err => console.log(err));
   }
-
+  
 render() {
-  console.log("STATE == == == ", this.state)
+  console.log("STATE == == == ", this.state);
+  const bParts = pick(this.state, ['legs', 'chest', 'posteriorChain', 'back', 'biceps', 'triceps', 'shoulders', 'core']);
+  const equip = pick(this.state, ['bench', 'dumbell', 'barbell', 'kettlebell', 'ghdBench', 'playground', 'pullupBar', 'resistanceBand', 'cableMachine', 'legExtension', 'gymnasticRings', 'romanChair', 'physioball']);
+    
+  console.log("bodyParts", bParts)
+  console.log("equipment", equip)
+  console.log("bodyParts function", this.getKeyByTrue(bParts));
+  console.log("equipment function", this.getKeyByTrue(equip));
   return(
 
     <div>
