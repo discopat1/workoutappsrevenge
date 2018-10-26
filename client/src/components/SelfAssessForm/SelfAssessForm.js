@@ -3,35 +3,36 @@ import "./SelfAssessForm.css";
 import API from "../utils/API";
 
 class SAForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+    state = {
       bench: "",
       squat: "",
       weight: ""
     };
-    this.handleInputChange = this.handleInputChange.bind(this);
-  }
+    
   handleInputChange = event => {
-    // Getting the value and name of the input which triggered the change
+
     let value = event.target.value;
+    const cleanNumber = parseInt(value)
     const name = event.target.name;
     // Updating the input's state
-    this.setState({
-      [name]: value
-    });
-    
-  };
+    if (Number.isInteger(cleanNumber) || value.length === 0) {
+      // Updating the input's state
+        this.setState({
+          [name]: value
+        });
+      } 
+    };
 
-  handleFormSubmit = event => {
+  handleFormSubmit = id => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
-    event.preventDefault();
-    
+    // event.preventDefault();
+    console.log("this is working")
     if (this.state.bench && this.state.squat && this.state.weight) {
-          API.estimateOneRep({
-            bench: this.state.bench,
-            squat: this.state.squat,
-            weight: this.state.weight
+          API.estimateOneRep(id,
+          {
+            bench: parseInt(this.state.bench),
+            squat: parseInt(this.state.squat),
+            weight: parseInt(this.state.weight)
           }).then(() => this.setState({
             bench: "",
             squat: "",
@@ -39,17 +40,18 @@ class SAForm extends Component {
           }))
             .catch(err => console.log(err));
         }
-    // if (!this.state.bench || !this.state.squat || !this.state.weight) {
-    //   alert("Fill out your max reps please!");
-    // } else {
-    //   alert("Good Job!");
-    // }
+    if (!this.state.bench || !this.state.squat || !this.state.weight) {
+      alert("Fill out your max reps please!");
+    } else {
+      alert("Good Job!");
+    }
     
   };
   
 
   render() {
     // Notice how each input has a `value`, `name`, and `onChange` prop
+    const id = "5bc27db12e7ac5f71a6387ea"
     return (
       <div>
         <p>
@@ -77,7 +79,7 @@ class SAForm extends Component {
             type="text"
             placeholder="Your bodyweight!"
           />
-          <button onClick={this.handleFormSubmit}>Submit</button>
+          <button onClick={() =>{this.handleFormSubmit(id)}}>Submit</button>
         </form>
       </div>
     );

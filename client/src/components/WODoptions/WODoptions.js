@@ -90,9 +90,9 @@ class WODoptions extends Component {
     
   
   handleFormSubmit = (id) => {
+    console.log("hello")
     const bParts = pick(this.state, ['legs', 'chest', 'posteriorChain', 'back', 'biceps', 'triceps', 'shoulders', 'core']);
     const equip = pick(this.state, ['bench', 'dumbell', 'barbell', 'kettlebell', 'ghdBench', 'playground', 'pullupBar', 'resistanceBand', 'cableMachine', 'legExtension', 'gymnasticRings', 'romanChair', 'physioball']);
-    
     // event.preventDefault()
     API.postWorkoutOptions(id,
     {
@@ -101,7 +101,12 @@ class WODoptions extends Component {
       bodyparts: this.getKeyByTrue(bParts),
       equipment: this.getKeyByTrue(equip)
     })
-    .catch(err => console.log(err));
+    .then((data) =>{
+      console.log("data", data.data.dbCompound);
+      console.log("data accessory", data.data.dbAccessory);
+      // localStorage.setItem(data)
+    });
+
   }
   
 render() {
@@ -125,7 +130,7 @@ render() {
         <h2>What bodyparts do you want to work?</h2>
         {bodyParts.map(this.renderBodyCheckBox)}
       </form>
-    <button onClick={this.handleFormSubmit(id)}>Workout Now</button>
+    <button onClick={()=>{this.handleFormSubmit(id)}}>Workout Now</button>
     </div>
     );
   };
