@@ -89,34 +89,23 @@ class WODoptions extends Component {
 
     
   
-  handleFormSubmit = event => {
-    event.preventDefault()
+  handleFormSubmit = (id) => {
+    const bParts = pick(this.state, ['legs', 'chest', 'posteriorChain', 'back', 'biceps', 'triceps', 'shoulders', 'core']);
+    const equip = pick(this.state, ['bench', 'dumbell', 'barbell', 'kettlebell', 'ghdBench', 'playground', 'pullupBar', 'resistanceBand', 'cableMachine', 'legExtension', 'gymnasticRings', 'romanChair', 'physioball']);
     
-    // bodyParts = pick(this.state, ['legs', 'chest', 'posteriorChain', 'back', 'biceps', 'triceps', 'shoulders', 'core']);
-    
-    // equipment = pick(this.state, ['bench', 'dumbell', 'barbell', 'kettlebell', 'ghdBench', 'playground', 'pullupBar', 'resistanceBand', 'cableMachine', 'legExtension', 'gymnasticRings', 'romanChair', 'physioball']);
-  
-    API.postWorkoutOptions(
-      // id, 
-      // id = OneRep.id;
+    // event.preventDefault()
+    API.postWorkoutOptions(id,
     {
       time: this.state.time,
       purpose: this.state.purpose,
-      bodyparts: this.getKeyByTrue(bodyParts),
-      equipment: this.getKeyByTrue(equipment)
+      bodyparts: this.getKeyByTrue(bParts),
+      equipment: this.getKeyByTrue(equip)
     })
     .catch(err => console.log(err));
   }
   
 render() {
-  console.log("STATE == == == ", this.state);
-  const bParts = pick(this.state, ['legs', 'chest', 'posteriorChain', 'back', 'biceps', 'triceps', 'shoulders', 'core']);
-  const equip = pick(this.state, ['bench', 'dumbell', 'barbell', 'kettlebell', 'ghdBench', 'playground', 'pullupBar', 'resistanceBand', 'cableMachine', 'legExtension', 'gymnasticRings', 'romanChair', 'physioball']);
-    
-  console.log("bodyParts", bParts)
-  console.log("equipment", equip)
-  console.log("bodyParts function", this.getKeyByTrue(bParts));
-  console.log("equipment function", this.getKeyByTrue(equip));
+  const id = "5bca3366bb778d6499944c58";
   return(
 
     <div>
@@ -136,7 +125,7 @@ render() {
         <h2>What bodyparts do you want to work?</h2>
         {bodyParts.map(this.renderBodyCheckBox)}
       </form>
-    <button onClick={this.handleFormSubmit}>Workout Now</button>
+    <button onClick={this.handleFormSubmit(id)}>Workout Now</button>
     </div>
     );
   };
