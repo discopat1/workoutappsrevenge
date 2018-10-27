@@ -174,6 +174,7 @@ var controller = {
     // POST route for saving a one rep max to the db and associating it with a User profile
     // Create a new one rep max in the database
     oneRepInput: function (req, res) {
+        console.log("actual one rep---", req.body)
         db.OneRepMax.create(req.body)
         .then(function(dbOneRep) {
             // If a one rep max was created successfully, find one User profile  and push the new one rep's _id to the User's one rep field

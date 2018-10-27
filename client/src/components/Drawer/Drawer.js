@@ -34,6 +34,7 @@ class TemporaryDrawer extends React.Component {
 
         const sideList = (
             <div className={classes.list}>
+            
             <List>
                 <Link
         to="/dashboard"
@@ -43,6 +44,7 @@ class TemporaryDrawer extends React.Component {
         style={{ textDecoration: 'none', color: 'inherit' }}>
         DASHBOARD
       </Link></List>
+            
             <List>  
                 <Link
         to="/wodoptions"
@@ -50,8 +52,20 @@ class TemporaryDrawer extends React.Component {
           window.location.pathname === "/wodoptions" ? "nav-link active" : "nav-link"
         }
         style={{ textDecoration: 'none', color: 'inherit' }}>
-        WORKOUT
+        WORKOUT OPTIONS
       </Link></List>
+
+      <List>  
+        <Link
+            to="/wodactive"
+            className={
+            window.location.pathname === "/wodactive" ? "nav-link active" : "nav-link"
+            }
+            style={{ textDecoration: 'none', color: 'inherit' }}>
+            WORKOUT OF THE DAY
+        </Link>
+      </List>
+           
             <List>   
                 <Link
         to="/selfassess"

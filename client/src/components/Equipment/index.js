@@ -1,1 +1,1 @@
-export { default } from "./Equipment";
+export { equipment, equipmentLabels } from "./Equipment";

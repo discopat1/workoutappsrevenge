@@ -1,8 +1,8 @@
 import React from "react";
 
 class PurposeOptions extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       purpose: ""
     };
@@ -11,10 +11,12 @@ class PurposeOptions extends React.Component {
   }
 
   handleInputChange(event) {
-    
+    let value = event.target.value;
+    const name = event.target.name;
     this.setState({
-      purpose: event.target.value
+      [name]: value
     });
+    this.props.onPurposeChange(event.target.value);
   }
 
   render() {

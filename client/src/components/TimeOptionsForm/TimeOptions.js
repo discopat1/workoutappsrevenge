@@ -1,8 +1,8 @@
 import React from "react";
 
 class TimeOptions extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       time: ""
     };
@@ -11,10 +11,12 @@ class TimeOptions extends React.Component {
   }
 
   handleInputChange(event) {
-    
+    let value = event.target.value;
+    const name = event.target.name;
     this.setState({
-      time: event.target.value
+      [name]: value
     });
+    this.props.onTimeChange(event.target.value);
   }
 
   render() {
@@ -22,7 +24,7 @@ class TimeOptions extends React.Component {
       <form>
         <h2>How much time do you have?</h2>
         <label>
-          5-15 Minutes:
+          10-15 Minutes:
           <input
             name="time"
             type="radio"

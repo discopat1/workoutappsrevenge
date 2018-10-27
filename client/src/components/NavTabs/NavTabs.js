@@ -64,6 +64,7 @@ const NavTabs = () => (
         Workout Options
       </Link>
     </li>
+    
 
 {/* This is the sign in page ************************** */}
     <li className="nav-item">
