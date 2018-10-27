@@ -1,10 +1,10 @@
 import React from "react";
 import UserProfile from "../ProfileCard";
-// import NavTabs from "../NavTabs";
+import Navbar from "../Navbar";
 
 const Dash = () => (
   <div>
-    {/* <NavTabs /> */}
+    <Navbar />
     <h1>Dashboard page</h1>
     <p>
       Hi, I'm Dashboard.

@@ -5,6 +5,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
+import auth0Client from "../Auth";
 import './Logout.css';
 
 
@@ -68,7 +69,7 @@ function Logout(props) {
             <div className={classes.heroButtons}>
               <Grid container spacing={16} justify="center">
                 <Grid item>
-                  <Button variant="contained" color="primary">
+                  <Button variant="contained" color="primary" onClick={()=>auth0Client.signIn()}>
                     Sign in
                   </Button>
                 </Grid>
