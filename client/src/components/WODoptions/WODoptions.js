@@ -101,13 +101,13 @@ class WODoptions extends Component {
       equipment: this.getKeyByTrue(equip)
     })
     .then((data) =>{
-      function displayData(exercise) {
-        console.log(exercise);
-        console.log(exercise.name);
-        // localStorage.setItem('Exercise', exercise.name)
-      }
-      console.log("data compound", data.data.dbCompound.map(displayData));
-      console.log("data accessory", data.data.dbAccessory.map(displayData));
+      const compound = data.data.dbCompound;
+      const accessory = data.data.dbAccessory;
+      const exerciseArr = compound.concat(accessory);
+      console.log("full exercise array", exerciseArr);
+      localStorage.setItem('exercises', JSON.stringify(exerciseArr));
+      localStorage.setItem("time", this.state.time);
+      localStorage.setItem("purpose", this.state.purpose);
     });
 
   }

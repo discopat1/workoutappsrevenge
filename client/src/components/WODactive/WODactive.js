@@ -1,13 +1,16 @@
-import React, { component }  from "react";
+import React, { Component }  from "react";
 import WODForm from "../WorkoutInputForm";
 import API from "../utils/API"
+import DisplayExercises from "../DisplayExercises/Index";
 
 
 
-class WODactive extends component {
+class WODactive extends Component {
 
   state = {
-    finishedExercises: []
+    finishedExercises: [
+      {name: "Deadlift", sets: 4, reps: 8, weight: 295}
+    ]
   }
   
   addExercise = exercise => {
@@ -17,6 +20,8 @@ class WODactive extends component {
       finishedExercises: finishedExercises
     })
   }
+
+  
 
   // This function actually belongs in active page
   handleFormSubmit = (id) => {
@@ -43,25 +48,19 @@ class WODactive extends component {
 
   render() {
     const id = "5bc27db12e7ac5f71a6387ea";
-    const exercises = localStorage.getItem("Exercise")
-    exercises.map(exercise =>{
-      return (
+    return (
         <div>
           <h1>Here's your workout</h1>
           <p>
             Lift heavy stuff
           </p>
-          <div>Exercise: { exercise.name }</div>
-          <div>Sets: 3-5</div>
-          <div>Reps: { exercise.purpose }</div>
-          <div>Weight: { exercise.weight }</div>
+          <DisplayExercises />
           <WODForm />
           <form>
           <button onClick={() =>{this.handleSubmitForm(id)}}>Save workout</button>
           </form>
         </div>
-        )
-      })
+      )
     };
   }
     

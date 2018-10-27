@@ -35,9 +35,6 @@ class WODForm extends Component {
      const id = "5bc27db12e7ac5f71a6387ea"
     return (
       <div>
-        <p>
-          One rep max?
-        </p>
         <form className="form">
           <label htmlFor="exercise">Name</label>
           <input
