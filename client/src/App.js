@@ -7,13 +7,13 @@ import Dash from "./components/Dashboard";
 import Assessment from "./components/OneRepAssessPage";
 import WODoptions from "./components/WODoptions";
 import WODactive from "./components/WODactive";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 
 const App = () => (
   <Router>
     <React.Fragment>
         <div>
-        <Navbar />
+        {/* <Navbar /> */}
           <Route exact path="/" component={Splash} />
           <Route exact path="/dashboard" component={Dash} />
           <Route exact path="/selfassess" component={Assessment} />
