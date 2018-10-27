@@ -167,7 +167,7 @@ var controller = {
     
     findProfilebyId: function (req, res) {
         db.UserProfile
-            .findById(req.params.id)
+            .find({id: req.params.id})
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
