@@ -90,7 +90,6 @@ class WODoptions extends Component {
     
   
   handleFormSubmit = (id) => {
-    console.log("hello")
     const bParts = pick(this.state, ['legs', 'chest', 'posteriorChain', 'back', 'biceps', 'triceps', 'shoulders', 'core']);
     const equip = pick(this.state, ['bench', 'dumbell', 'barbell', 'kettlebell', 'ghdBench', 'playground', 'pullupBar', 'resistanceBand', 'cableMachine', 'legExtension', 'gymnasticRings', 'romanChair', 'physioball']);
     // event.preventDefault()
@@ -102,9 +101,13 @@ class WODoptions extends Component {
       equipment: this.getKeyByTrue(equip)
     })
     .then((data) =>{
-      console.log("data", data.data.dbCompound);
-      console.log("data accessory", data.data.dbAccessory);
-      // localStorage.setItem(data)
+      function displayData(exercise) {
+        console.log(exercise);
+        console.log(exercise.name);
+        // localStorage.setItem('Exercise', exercise.name)
+      }
+      console.log("data compound", data.data.dbCompound.map(displayData));
+      console.log("data accessory", data.data.dbAccessory.map(displayData));
     });
 
   }
