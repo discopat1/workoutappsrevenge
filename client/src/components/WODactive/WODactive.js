@@ -15,6 +15,7 @@ class WODactive extends Component {
   
   addExercise = exercise => {
     console.log(exercise)
+    exercise.id = Math.random()
     let finishedExercises = [...this.state.finishedExercises, exercise];
     this.setState ({
       finishedExercises: finishedExercises
@@ -48,6 +49,7 @@ class WODactive extends Component {
 
   render() {
     const id = "5bc27db12e7ac5f71a6387ea";
+    console.log(this.state);
     return (
         <div>
           <h1>Here's your workout</h1>

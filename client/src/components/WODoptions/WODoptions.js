@@ -92,7 +92,7 @@ class WODoptions extends Component {
   handleFormSubmit = (id) => {
     const bParts = pick(this.state, ['legs', 'chest', 'posteriorChain', 'back', 'biceps', 'triceps', 'shoulders', 'core']);
     const equip = pick(this.state, ['bench', 'dumbell', 'barbell', 'kettlebell', 'ghdBench', 'playground', 'pullupBar', 'resistanceBand', 'cableMachine', 'legExtension', 'gymnasticRings', 'romanChair', 'physioball']);
-    // event.preventDefault()
+    
     API.postWorkoutOptions(id,
     {
       time: this.state.time,
@@ -105,9 +105,9 @@ class WODoptions extends Component {
       const accessory = data.data.dbAccessory;
       const exerciseArr = compound.concat(accessory);
       console.log("full exercise array", exerciseArr);
+      console.log('purpose,', this.state.purpose)
       localStorage.setItem('exercises', JSON.stringify(exerciseArr));
-      localStorage.setItem("time", this.state.time);
-      localStorage.setItem("purpose", this.state.purpose);
+      sessionStorage.setItem('purpose', this.state.purpose);
     });
 
   }
