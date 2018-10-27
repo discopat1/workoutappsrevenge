@@ -5,7 +5,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
-import './SplashPage.css';
+import './Logout.css';
 
 
 const styles = theme => ({
@@ -35,7 +35,7 @@ const styles = theme => ({
   }
 });
 
-function Splash(props) {
+function Logout(props) {
   const { classes } = props;
 
   return (
@@ -58,21 +58,12 @@ function Splash(props) {
             </Typography>
 
             <Typography
-              variant="h5"
-              align="center"
-              color="textPrimary"
-              gutterBottom
-            >
-              The app for the aspiring fitness <br /> buff or serious athlete.
-            </Typography>
-
-            <Typography
-              variant="h7"
+              variant="h6"
               align="center"
               color="textSecondary"
               paragraph
             >
-              Built for those who want to exercise with purpose while also living a time constrained lifestyle. Just answer a few questions and you'll be provided an customized workout based on your specific needs.
+             You've signed out.
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={16} justify="center">
@@ -81,11 +72,7 @@ function Splash(props) {
                     Sign in
                   </Button>
                 </Grid>
-                {/* <Grid item>
-                  <Button variant="outlined" color="primary">
-                    More Information
-                  </Button>
-                </Grid> */}
+
               </Grid>
             </div>
           </div>{" "}
@@ -100,8 +87,7 @@ function Splash(props) {
         {/* right item start ************************************* */}
 
         <Grid item xs={6}>
-          <img src={"./img/workout-package_1.jpg"} className="rightImage" alt="right"  />
-
+          <img src={"./img/man-1"} className="rightImage" alt="right"  />
         </Grid> 
 
         {/* end right item ************************************* */}
@@ -111,8 +97,8 @@ function Splash(props) {
   );
 }
 
-Splash.propTypes = {
+Logout.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Splash);
+export default withStyles(styles)(Logout);
