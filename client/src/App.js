@@ -7,18 +7,20 @@ import Dash from "./components/Dashboard";
 import Assessment from "./components/OneRepAssessPage";
 import WODoptions from "./components/WODoptions";
 import WODactive from "./components/WODactive";
-// import Navbar from "./components/Navbar";
+import Callback from "./components/Callback";
+import Logout from "./components/Logout";
 
 const App = () => (
   <Router>
     <React.Fragment>
         <div>
-        {/* <Navbar /> */}
           <Route exact path="/" component={Splash} />
           <Route exact path="/dashboard" component={Dash} />
           <Route exact path="/selfassess" component={Assessment} />
           <Route exact path="/wodoptions" component={WODoptions} />
           <Route exact path="/wodactive" component={WODactive} />
+          <Route exact path='/callback' component={Callback} />
+          <Route exact path='/Logout' component={Logout} />
         </div>
     </React.Fragment>
   </Router>
