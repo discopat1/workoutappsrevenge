@@ -42,12 +42,10 @@ class SAForm extends Component {
             weight: "",
           }))
             .catch(err => console.log(err));
+            window.location.href="/wodoptions"
+        } else {
+          alert("Fill out your max reps please!");
         }
-    if (!this.state.bench || !this.state.squat || !this.state.weight) {
-      alert("Fill out your max reps please!");
-    } else {
-      alert("Good Job!");
-    }
     
   };
 

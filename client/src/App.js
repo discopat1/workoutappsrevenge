@@ -9,6 +9,7 @@ import WODoptions from "./components/WODoptions";
 import WODactive from "./components/WODactive";
 import Callback from "./components/Callback";
 import Logout from "./components/Logout";
+import VideoList from "./components/VideoList";
 
 const App = () => (
   <Router>
@@ -21,7 +22,7 @@ const App = () => (
           <Route exact path="/wodactive" component={WODactive} />
           <Route exact path='/callback' component={Callback} />
           <Route exact path='/Logout' component={Logout} />
-          {/* <Route exact path='/exerciselist' component={ExerciseList} /> */}
+          <Route exact path='/exerciselist' component={VideoList} />
         </div>
     </React.Fragment>
   </Router>

@@ -2,6 +2,7 @@ import React, { Component }  from "react";
 import WODForm from "../WorkoutInputForm";
 import API from "../utils/API"
 import DisplayExercises from "../DisplayExercises/Index";
+import Navbar from "../Navbar";
 
 
 
@@ -66,6 +67,7 @@ class WODactive extends Component {
     console.log(this.state.finishedExercises);
     return (
         <div>
+          <Navbar />
           <h1>Here's your workout</h1>
           <p>
             Lift heavy stuff
