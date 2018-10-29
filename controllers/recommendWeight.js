@@ -234,11 +234,11 @@ const findWeight = async function(id, data, purpose) {
             maxWeight = "undefined";
             function purposeWeight(weight) {
                 if (purpose === "speed") {
-                    datum.weight = weight * 0.60
+                    datum.weight = Math.floor(weight * 0.40)
                 } else if (purpose === "strength") {
-                    datum.weight = weight * 0.75
+                    datum.weight = Math.floor(weight * 0.75)
                 } else if (purpose === "sculpt") {
-                    datum.weight = weight * 0.65
+                    datum.weight = Math.floor(weight * 0.60)
                 }
             }
     

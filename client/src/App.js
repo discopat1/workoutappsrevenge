@@ -21,6 +21,7 @@ const App = () => (
           <Route exact path="/wodactive" component={WODactive} />
           <Route exact path='/callback' component={Callback} />
           <Route exact path='/Logout' component={Logout} />
+          {/* <Route exact path='/exerciselist' component={ExerciseList} /> */}
         </div>
     </React.Fragment>
   </Router>

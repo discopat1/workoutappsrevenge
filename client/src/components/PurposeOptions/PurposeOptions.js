@@ -1,4 +1,5 @@
 import React from "react";
+import "./PurposeOptions.css";
 
 class PurposeOptions extends React.Component {
   constructor(props) {
@@ -22,39 +23,39 @@ class PurposeOptions extends React.Component {
   render() {
     return (
       <form>
-        <h2>What is your goal for today's workout?</h2>
-        <label>
-          Speed:
-          <input
-            name="purpose"
-            type="radio"
-            value="speed"
-            checked={this.state.purpose === "speed"}
-            onChange={this.handleInputChange} />
-        </label>
+        <h3>What is your goal for today's workout?</h3>
+
+        <input
+          name="purpose"
+          type="radio"
+          value="speed"
+          checked={this.state.purpose === "speed"}
+          onChange={this.handleInputChange}
+        />
+        <label>Speed</label>
         <br />
-        <label>
-        Strength:
-          <input
-            name="purpose"
-            type="radio"
-            value="strength"
-            checked={this.state.purpose === "strength"}
-            onChange={this.handleInputChange} />
-        </label>
-        <label>
-          Sculpt:
-          <input
-            name="purpose"
-            type="radio"
-            value="sculpt"
-            checked={this.state.purpose === "sculpt"}
-            onChange={this.handleInputChange} />
-        </label>
+
+        <input
+          name="purpose"
+          type="radio"
+          value="strength"
+          checked={this.state.purpose === "strength"}
+          onChange={this.handleInputChange}
+        />
+        <label>Strength</label>
+        <br />
+
+        <input
+          name="purpose"
+          type="radio"
+          value="sculpt"
+          checked={this.state.purpose === "sculpt"}
+          onChange={this.handleInputChange}
+        />
+        <label>Sculpt</label>
       </form>
     );
   }
 }
-
 
 export default PurposeOptions;

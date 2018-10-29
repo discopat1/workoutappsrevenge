@@ -7,12 +7,17 @@ import "./WorkoutInputForm.css";
 // so the state array will be saved in the wod active page and sent out from there
 
 class WODForm extends Component {
-  state = {
+  constructor(props) {
+    super(props)
+    this.state = {
       name: "",
       sets: "",
       reps: "",
       weight: ""
+    }
+    this.handleFormSubmit =this.handleFormSubmit.bind(this);
   }
+  
   
    handleInputChange = event => {
     
@@ -25,14 +30,13 @@ class WODForm extends Component {
       });
   };
 
-  // This function actually belongs in active page
    handleFormSubmit = event => {
     event.preventDefault();
+    console.log("passed state", this.state);
     this.props.addExercise(this.state)
   };
 
    render() {
-     const id = "5bc27db12e7ac5f71a6387ea"
     return (
       <div>
         <form className="form">
@@ -68,7 +72,7 @@ class WODForm extends Component {
             type="text"
             placeholder="Weight"
           />
-          <button onClick={() =>{this.handleFormSubmit(id)}}>Submit</button>
+          <button onClick={this.handleFormSubmit}>Submit</button>
         </form>
       </div>
     );
