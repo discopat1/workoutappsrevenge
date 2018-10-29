@@ -9,6 +9,7 @@ import Navbar from "../Navbar";
 import "./WODoptions.css";
 import Button from "@material-ui/core/Button";
 import Checkbox from '@material-ui/core/Checkbox';
+import auth0Client from '../Auth';
 
 // import auth0 from "../Auth";
 // import { identity } from "../../../../node_modules/rxjs";
@@ -142,8 +143,8 @@ class WODoptions extends Component {
 
   componentDidMount() {
     // use auth0 to get correct id
-    // const id = auth0.getUserId();
-    const userID = "5bd5e223a9fef2378f258bbe"
+    const userID = auth0Client.getUserId();
+    // const userID = "5bd5e223a9fef2378f258bbe"
     API.getUserProfile(userID)
     .then(res => {
       return res.data[0].oneRepMax
@@ -152,9 +153,9 @@ class WODoptions extends Component {
   }
 
   render() {
-    // const id = this.componentDidMount
+    const id = this.componentDidMount
     // id will be one rep max id
-    const id = "5bd5e76fe3128c3b7c65e889";
+    // const id = "5bd5e76fe3128c3b7c65e889";
     return (
       <React.Fragment>
         <Navbar />
