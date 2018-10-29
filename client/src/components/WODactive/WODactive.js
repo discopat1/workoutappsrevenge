@@ -3,14 +3,15 @@ import WODForm from "../WorkoutInputForm";
 import API from "../utils/API"
 import DisplayExercises from "../DisplayExercises/Index";
 import Navbar from "../Navbar";
-
+import auth0Client from "../Auth";
 
 
 class WODactive extends Component {
   constructor(props) {
     super(props)
     this.state = {
-    finishedExercises: []
+    finishedExercises: [],
+    id: auth0Client.getUserId()
     }
     this.addExercise = this.addExercise.bind(this);
     this.getReps = this.getReps.bind(this);
@@ -63,7 +64,7 @@ class WODactive extends Component {
   };
 
   render() {
-    const id = "5bd5e745e3128c3b7c65e888";
+    const id = this.state.id;
     console.log(this.state.finishedExercises);
     return (
         <div>
