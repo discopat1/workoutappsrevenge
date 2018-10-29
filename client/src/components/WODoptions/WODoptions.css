@@ -1,0 +1,30 @@
+.container {
+   width: 90%;
+   margin: 0 auto;
+}
+
+h3 {
+   font-family: Roboto;
+   font-weight: 500;
+}
+
+.article {
+   display: flex;
+   flex-direction: row;
+}
+
+.box1 {
+   flex-basis: calc(50% - 40px);
+
+}
+
+.box2 {
+   flex-basis: calc(100% - 40px);
+   justify-content: center;
+}
+
+.footer {
+   display:flex;
+   justify-content: flex-end;
+   margin-top: 35px;
+}
