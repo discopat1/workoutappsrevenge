@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import "./OneRepForm.css";
 import API from "../utils/API";
-import auth0 from "../Auth"
+import auth0Client from "../Auth";
 
 class ORForm extends Component {
   state = {
       bench: "",
       squat: "",
+      id: auth0Client.getUserId()
     };
   
    handleInputChange = event => {
@@ -32,20 +33,17 @@ class ORForm extends Component {
         bench: "",
         squat: "",
       }))
-      window.location.href = "/wodoptions"
       .catch(err => console.log(err));
-    }
-    if (!this.state.bench || !this.state.squat) {
-      alert("Fill out your one rep max please!");
+      window.location.href = "/wodoptions"
     } else {
-      alert("Good Job!");
+      alert("Fill out your one rep max please!");
     }
     
   };
 
    render() {
-     const id = "5bd5e745e3128c3b7c65e888"
-    //  const id = auth0.getUserId();
+    //  const id = "5bd5e745e3128c3b7c65e888"
+     const id = this.state.id;
     //  console.log('client ID', auth0.getUserId());
     return (
       <div>
