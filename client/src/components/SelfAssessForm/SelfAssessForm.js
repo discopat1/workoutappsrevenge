@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./SelfAssessForm.css";
 import API from "../utils/API";
+import auth0 from "../Auth";
 
 class SAForm extends Component {
     state = {
@@ -24,9 +25,6 @@ class SAForm extends Component {
     };
 
   handleFormSubmit = id => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
-    // event.preventDefault();
-    console.log("this is working")
     if (this.state.bench && this.state.squat && this.state.weight) {
           API.estimateOneRep(id,
           {
@@ -36,7 +34,7 @@ class SAForm extends Component {
           }).then(() => this.setState({
             bench: "",
             squat: "",
-            weight: ""
+            weight: "",
           }))
             .catch(err => console.log(err));
         }
@@ -47,11 +45,11 @@ class SAForm extends Component {
     }
     
   };
-  
 
   render() {
+    const id = "5bd5e745e3128c3b7c65e888"
     // Notice how each input has a `value`, `name`, and `onChange` prop
-    const id = "5bc27db12e7ac5f71a6387ea"
+    // const id = auth0.getUserId();
     return (      
       <div>
         <p>

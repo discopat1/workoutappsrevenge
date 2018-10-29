@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./OneRepForm.css";
 import API from "../utils/API";
+import auth0 from "../Auth"
 
 class ORForm extends Component {
   state = {
@@ -13,8 +14,6 @@ class ORForm extends Component {
     let value = event.target.value;
     const cleanNumber = parseInt(value)
     const name = event.target.name;
-    console.log("clean number===", cleanNumber);
-    console.log("value", value)
     if (Number.isInteger(cleanNumber) || value.length === 0) {
     // Updating the input's state
       this.setState({
@@ -23,9 +22,6 @@ class ORForm extends Component {
     } 
   };
    handleFormSubmit = (id) => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
-    // event.preventDefault();
-    console.log("hello");
     if (this.state.bench && this.state.squat) {
       API.actualOneRep(id,
       {
@@ -36,6 +32,7 @@ class ORForm extends Component {
         bench: "",
         squat: "",
       }))
+      window.location.href = "/wodoptions"
       .catch(err => console.log(err));
     }
     if (!this.state.bench || !this.state.squat) {
@@ -47,7 +44,9 @@ class ORForm extends Component {
   };
 
    render() {
-     const id = "5bc27db12e7ac5f71a6387ea"
+     const id = "5bd5e745e3128c3b7c65e888"
+    //  const id = auth0.getUserId();
+    //  console.log('client ID', auth0.getUserId());
     return (
       <div>
         <p>
