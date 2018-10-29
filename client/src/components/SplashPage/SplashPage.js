@@ -13,7 +13,10 @@ const styles = theme => ({
   heroContent: {
     maxWidth: "85%",
     margin: "0 auto",
-    padding: `${theme.spacing.unit * 0}px 0 ${theme.spacing.unit * 6}px`
+    display:"grid",
+    alignItems:"center",
+    justify:"center"
+    // padding: `${theme.spacing.unit * 0}px 0 ${theme.spacing.unit * 6}px`
   },
   heroButtons: {
     marginTop: theme.spacing.unit * 4
@@ -103,7 +106,7 @@ function Splash(props) {
         {/* right item start ************************************* */}
 
         <Grid item xs={6}>
-          <img src={"./img/workout-package_1.jpg"} className="rightImage" alt="right"  />
+          <img src={"./img/woman01.jpg"} className="rightImage" alt="right"  />
 
         </Grid> 
 

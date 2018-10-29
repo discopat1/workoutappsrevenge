@@ -4,51 +4,20 @@ import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import { withStyles } from "@material-ui/core/styles";
 import auth0Client from "../Auth";
-import './Logout.css';
+import "./Logout.css";
 
 
-const styles = theme => ({
-  heroContent: {
-    maxWidth: "85%",
-    margin: "0 auto",
-    padding: `${theme.spacing.unit * 0}px 0 ${theme.spacing.unit * 6}px`
-  },
-  heroButtons: {
-    marginTop: theme.spacing.unit * 4
-  },
-  layout: {
-    width: "auto",
-    marginLeft: theme.spacing.unit * 3,
-    marginRight: theme.spacing.unit * 3,
-    [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
-      width: 1100,
-      marginLeft: "auto",
-      marginRight: "auto"
-    },
-    card: {
-      maxWidth: "100%",
-    },
-    media: {
-      height: "100%"
-    },
-  }
-});
-
-function Logout(props) {
-  const { classes } = props;
+function Logout() {
 
   return (
     <React.Fragment>
       <CssBaseline />
-      <Grid container>
-        {/* left item ************************************* */}
-        <Grid item xs={6}>
-          <div className={classes.heroUnit}>
-          <img src={"./img/logo.png"} className="App-logo" alt="logo"  />
-          <div className={classes.heroContent}>
-
+      <div className="container">
+        {/* left column ************************************* */}
+        <div className="leftcol">
+          <div className="article">
+            <img src={"./img/logo.png"} className="App-logo" alt="logo" />
             <Typography
               variant="h2"
               align="center"
@@ -64,42 +33,33 @@ function Logout(props) {
               color="textSecondary"
               paragraph
             >
-             You've signed out.
+              You've signed out.
             </Typography>
-            <div className={classes.heroButtons}>
-              <Grid container spacing={16} justify="center">
-                <Grid item>
-                  <Button variant="contained" color="primary" onClick={()=>auth0Client.signIn()}>
-                    Sign in
-                  </Button>
-                </Grid>
 
-              </Grid>
-            </div>
-          </div>{" "}
-          {/* end heroContent */}
-          </div> 
-          {/* end heroUnit */}
-        </Grid>
-        {/* end left item ************************************* */}
+            <Grid item>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => auth0Client.signIn()}
+              >
+                Sign in
+              </Button>
+            </Grid>
+            {/* end article */}
+          </div>
+          {/* end left column */}
+        </div>
 
+        {/* right column ************************************* */}
+        <div className="rightcol">
+          <img src={"./img/man01.jpg"} className="rightImage" alt="right" />
+        </div>
 
-
-        {/* right item start ************************************* */}
-
-        <Grid item xs={6}>
-          <img src={"./img/man-1"} className="rightImage" alt="right"  />
-        </Grid> 
-
-        {/* end right item ************************************* */}
-      </Grid>
-      {/* end container */}
+        {/* end container */}
+      </div>
     </React.Fragment>
   );
 }
 
-Logout.propTypes = {
-  classes: PropTypes.object.isRequired
-};
 
-export default withStyles(styles)(Logout);
+export default Logout;
