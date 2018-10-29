@@ -20,7 +20,8 @@ class WODoptions extends Component {
     super(props);
     this.state = {
       time: "",
-      purpose: ""
+      purpose: "",
+      id: ""
     };
     // eslint-disable-next-line react/no-direct-mutation-state
     equipment.forEach(e => (this.state[e] = false));
@@ -146,9 +147,9 @@ class WODoptions extends Component {
     const userID = auth0Client.getUserId();
     // const userID = "5bd5e223a9fef2378f258bbe"
     API.getUserProfile(userID)
-    .then(res => {
-      return res.data[0].oneRepMax
-    })
+    .then(res => this.setState({
+       id: res.data[0].oneRepMax
+    }))
     .catch(err => console.log(err));
   }
 
