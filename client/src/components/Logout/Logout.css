@@ -1,34 +1,73 @@
-.container {
-   display:flex;
-   width:100vw;
-   height:100vh;
+.log_container {
+   display: flex;
+   width: 100vw;
+   height: 100vh;
 }
 
-.leftcol {
-   display:flex;
-   width:50%;
-   
+.log_leftcol {
+   display: flex;
+   width: 50%;
 }
 
-.article {
+.log_article {
+   display: flex;
    align-content: center;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.log_logo {
+   display: flex;
+   padding: 15px 0px;
+   margin: 0 auto;
+   width:18%;
    justify-content: center;
 }
 
+.log_headline {
+   display: flex;
+   justify-content: center;
+   font-family: Roboto;
+   font-weight: 300;
+   font-size: 4.25rem;
+   line-height: .5;
+}
+
+.log_subhead {
+   display: flex;
+   justify-content: center;
+   font-family: Roboto;
+   font-weight: 300;
+   font-size: 2rem;
+   line-height: 1;
+}
+
+.button {
+   display: flex;
+   justify-content: center;
+}
 
 .rightImage {
-   display:flex;
-   min-width:100%;
+   display: flex;
+   object-fit: cover;
+   height: 100vh;
+   width: 50vw;
 }
 
-
-.App-logo {
-   /* display: flex; */
-   padding: 5px 0px;
-   margin: 0 auto;
-   /* width:18%; */
-   /* justify-content: center; */
+@media only screen and (max-width: 1175px) {
+   .log_headline {
+      font-size: 3.25rem;
+   }
 }
 
-
-
+@media only screen and (max-width: 920px) {
+   .log_headline {
+      font-size: 2.5rem;
+   }
+   .log_subhead {
+      font-size:1.75rem;
+   }
+   .log_logo {
+      width: 30%; 
+   }
+}
