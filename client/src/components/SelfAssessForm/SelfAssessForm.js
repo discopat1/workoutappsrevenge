@@ -1,14 +1,19 @@
 import React, { Component } from "react";
 import "./SelfAssessForm.css";
 import API from "../utils/API";
-import auth0 from "../Auth";
+import auth0Client from "../Auth";
 
 class SAForm extends Component {
     state = {
       bench: "",
       squat: "",
-      weight: ""
+      weight: "",
+      id: auth0Client.getUserId()
     };
+
+  componentDidMount() {
+    console.log(this.state.id);
+  }
     
   handleInputChange = event => {
 
@@ -47,7 +52,7 @@ class SAForm extends Component {
   };
 
   render() {
-    const id = "5bd5e745e3128c3b7c65e888"
+    const id = this.state.id;
     // Notice how each input has a `value`, `name`, and `onChange` prop
     // const id = auth0.getUserId();
     return (      
