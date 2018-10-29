@@ -154,6 +154,7 @@ class WODoptions extends Component {
 
   render() {
     const id = this.componentDidMount
+    console.log("one rep id", id);
     // id will be one rep max id
     // const id = "5bd5e76fe3128c3b7c65e889";
     return (
