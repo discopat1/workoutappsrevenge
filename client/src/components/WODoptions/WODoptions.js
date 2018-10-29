@@ -8,6 +8,11 @@ import { pick } from "lodash";
 import Navbar from "../Navbar";
 import "./WODoptions.css";
 import Button from "@material-ui/core/Button";
+import {equipmentLabels, equipment} from "../Equipment";
+import {bodyParts, bodyPartLabels} from "../BodyParts";
+import API from "../utils/API";
+import { pick } from "lodash";
+// import auth0 from "../Auth";
 // import { identity } from "../../../../node_modules/rxjs";
 // import one rep id from UserProfile
 
@@ -133,11 +138,25 @@ class WODoptions extends Component {
       console.log("purpose,", this.state.purpose);
       localStorage.setItem("exercises", JSON.stringify(exerciseArr));
       sessionStorage.setItem("purpose", this.state.purpose);
+      window.location.href = "/wodactive"
     });
   };
 
+  componentDidMount() {
+    // use auth0 to get correct id
+    // const id = auth0.getUserId();
+    const userID = "5bd5e223a9fef2378f258bbe"
+    API.getUserProfile(userID)
+    .then(res => {
+      return res.data[0].oneRepMax
+    })
+    .catch(err => console.log(err));
+  }
+
   render() {
-    const id = "5bca3366bb778d6499944c58";
+    // const id = this.componentDidMount
+    // id will be one rep max id
+    const id = "5bd5e76fe3128c3b7c65e889";
     return (
       <React.Fragment>
         <Navbar />
@@ -185,7 +204,7 @@ class WODoptions extends Component {
 
           {/* end container */}
         </div>
-      </React.Fragment>
+      </React.Fragment>   
     );
   }
 }
