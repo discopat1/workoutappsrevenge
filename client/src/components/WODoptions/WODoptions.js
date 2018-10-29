@@ -8,10 +8,8 @@ import { pick } from "lodash";
 import Navbar from "../Navbar";
 import "./WODoptions.css";
 import Button from "@material-ui/core/Button";
-import {equipmentLabels, equipment} from "../Equipment";
-import {bodyParts, bodyPartLabels} from "../BodyParts";
-import API from "../utils/API";
-import { pick } from "lodash";
+import Checkbox from '@material-ui/core/Checkbox';
+
 // import auth0 from "../Auth";
 // import { identity } from "../../../../node_modules/rxjs";
 // import one rep id from UserProfile
@@ -63,7 +61,7 @@ class WODoptions extends Component {
   }
   renderEquipCheckBox = equipment => (
     <React.Fragment>
-      <input
+      <Checkbox
         name={equipment}
         type="checkbox"
         value={equipment}
@@ -76,7 +74,7 @@ class WODoptions extends Component {
   );
   renderBodyCheckBox = bodyPart => (
     <React.Fragment>
-      <input
+      <Checkbox
         name={bodyPart}
         type="checkbox"
         value={bodyPart}
@@ -194,8 +192,7 @@ class WODoptions extends Component {
             <Button
               variant="contained"
               color="primary"
-              onClick={() => this.handleFormSubmit(id)}
-            >
+              onClick={() => this.handleFormSubmit(id)}>
               Workout Now!
             </Button>
 
