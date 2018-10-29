@@ -1,124 +1,54 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import { withStyles } from "@material-ui/core/styles";
-import './SplashPage.css';
 import auth0Client from "../Auth";
+import './SplashPage.css';
 
-
-const styles = theme => ({
-  heroContent: {
-    maxWidth: "85%",
-    margin: "0 auto",
-    display:"grid",
-    alignItems:"center",
-    justify:"center"
-    // padding: `${theme.spacing.unit * 0}px 0 ${theme.spacing.unit * 6}px`
-  },
-  heroButtons: {
-    marginTop: theme.spacing.unit * 4
-  },
-  layout: {
-    width: "auto",
-    marginLeft: theme.spacing.unit * 3,
-    marginRight: theme.spacing.unit * 3,
-    [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
-      width: 1100,
-      marginLeft: "auto",
-      marginRight: "auto"
-    },
-    card: {
-      maxWidth: "100%",
-    },
-    media: {
-      height: "100%"
-    },
-  }
-});
-
-function Splash(props) {
-  const { classes } = props;
-
+function Splash() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Grid container>
-        {/* left item ************************************* */}
-        <Grid item xs={6}>
-          <div className={classes.heroUnit}>
-          <img src={"./img/logo.png"} className="App-logo" alt="logo"  />
-          <div className={classes.heroContent}>
+      <div className="spl_container">
+        {/* left column ************************************* */}
+        <div className="spl_leftcol">
+          <div className="spl_article">
+            <div>
+              <img src={"./img/logo.png"} className="spl_logo" alt="logo" />
+            </div>
 
-            <Typography
-              variant="h2"
-              align="center"
-              color="textPrimary"
-              gutterBottom
-            >
-              The WorkOut App
-            </Typography>
+            <div>
+              <p className="spl_headline">The WorkOut App</p>
+              <p className="spl_subhead">The app for the aspiring fitness buff or serious athlete.</p>
+              <p className="spl_blurb">Built for those who want to exercise with purpose while also living a time constrained lifestyle. Just answer a few questions and you'll be provided an customized workout based on your specific needs.</p>
+            </div>
 
-            <Typography
-              variant="h5"
-              align="center"
-              color="textPrimary"
-              gutterBottom
-            >
-              The app for the aspiring fitness <br /> buff or serious athlete.
-            </Typography>
-
-            <Typography
-              variant="h7"
-              align="center"
-              color="textSecondary"
-              paragraph
-            >
-              Built for those who want to exercise with purpose while also living a time constrained lifestyle. Just answer a few questions and you'll be provided an customized workout based on your specific needs.
-            </Typography>
-            <div className={classes.heroButtons}>
-              <Grid container spacing={16} justify="center">
-                <Grid item>
-                  <Button variant="contained" color="primary"
-
-                  onClick={()=>auth0Client.signIn()}>
-                    Sign in
-                  </Button>
-                </Grid>
-                {/* <Grid item>
-                  <Button variant="outlined" color="primary">
-                    More Information
-                  </Button>
-                </Grid> */}
+            <div className="button">
+              <Grid item>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={() => auth0Client.signIn()}
+                >
+                  Sign in
+                </Button>
               </Grid>
             </div>
-          </div>{" "}
-          {/* end heroContent */}
-          </div> 
-          {/* end heroUnit */}
-        </Grid>
-        {/* end left item ************************************* */}
 
+            {/* end article */}
+          </div>
+          {/* end left column */}
+        </div>
 
+        {/* right column ************************************* */}
+        <div className="rightcol">
+          <img src={"./img/woman01.jpg"} className="rightImage" alt="right" />
+        </div>
 
-        {/* right item start ************************************* */}
-
-        <Grid item xs={6}>
-          <img src={"./img/woman01.jpg"} className="rightImage" alt="right"  />
-
-        </Grid> 
-
-        {/* end right item ************************************* */}
-      </Grid>
-      {/* end container */}
+        {/* end container */}
+      </div>
     </React.Fragment>
   );
 }
 
-Splash.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
-export default withStyles(styles)(Splash);
+export default Splash;
