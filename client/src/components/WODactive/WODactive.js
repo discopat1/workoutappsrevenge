@@ -6,15 +6,19 @@ import DisplayExercises from "../DisplayExercises/Index";
 
 
 class WODactive extends Component {
-
-  state = {
-    finishedExercises: [
-      {name: "Deadlift", sets: 4, reps: 8, weight: 295}
-    ]
+  constructor(props) {
+    super(props)
+    this.state = {
+    finishedExercises: []
+    }
+    this.addExercise = this.addExercise.bind(this);
+    this.getReps = this.getReps.bind(this);
   }
+    
+  
   
   addExercise = exercise => {
-    console.log(exercise)
+    console.log("exercise===", exercise)
     exercise.id = Math.random()
     let finishedExercises = [...this.state.finishedExercises, exercise];
     this.setState ({
@@ -22,6 +26,16 @@ class WODactive extends Component {
     })
   }
 
+  getReps = () => {
+    const purpose = sessionStorage.getItem('purpose');
+        if (purpose === 'speed') {
+            return '3-5'
+        } else if (purpose === 'strength') {
+            return '8-10'
+        } else if (purpose === 'sculpt') {
+            return '10-15'
+        }
+    }
   
 
   // This function actually belongs in active page
@@ -48,16 +62,32 @@ class WODactive extends Component {
   };
 
   render() {
-    const id = "5bc27db12e7ac5f71a6387ea";
-    console.log(this.state);
+    const id = "5bd5e745e3128c3b7c65e888";
+    console.log(this.state.finishedExercises);
     return (
         <div>
           <h1>Here's your workout</h1>
           <p>
             Lift heavy stuff
           </p>
-          <DisplayExercises />
-          <WODForm />
+          <DisplayExercises 
+          getReps={this.getReps}/>
+          <WODForm 
+          addExercise={this.addExercise}/>
+          <ul>
+          {this.state.finishedExercises.map(exercise => (
+            <li key={exercise.id}>
+              Exercise: {exercise.name}
+              <br/>
+              Sets: {exercise.sets}
+              <br/>
+              Reps: {exercise.reps}
+              <br/>
+              Weight: {exercise.weight}
+              <br/>
+            </li>
+            ))}
+          </ul>
           <form>
           <button onClick={() =>{this.handleSubmitForm(id)}}>Save workout</button>
           </form>
