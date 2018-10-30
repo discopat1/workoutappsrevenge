@@ -10,6 +10,8 @@ import "./WODoptions.css";
 import Button from "@material-ui/core/Button";
 import Checkbox from '@material-ui/core/Checkbox';
 import auth0Client from '../Auth';
+import { Link } from "react-router-dom";
+
 
 // import auth0 from "../Auth";
 // import { identity } from "../../../../node_modules/rxjs";
@@ -126,6 +128,7 @@ class WODoptions extends Component {
       "romanChair",
       "physioball"
     ]);
+
     if (!this.state.time || !this.state.purpose) {
       alert("Please choose an option!")
     } else {
@@ -142,10 +145,8 @@ class WODoptions extends Component {
         console.log("purpose,", this.state.purpose);
         localStorage.setItem("exercises", JSON.stringify(exerciseArr));
         sessionStorage.setItem("purpose", this.state.purpose);
-        window.location.href = "/wodactive"
       });
     }
-  };
 
   componentDidMount() {
     // use auth0 to get correct id
@@ -202,7 +203,7 @@ class WODoptions extends Component {
               variant="contained"
               color="primary"
               onClick={() => this.handleFormSubmit(id)}>
-              Workout Now!
+              <Link to='/wodactive'style={{ textDecoration: 'none', color: 'inherit' }}>Workout Now!</Link>
             </Button>
 
             {/* **** end footer ******* */}

@@ -17,13 +17,12 @@ class WODactive extends Component {
     this.addExercise = this.addExercise.bind(this);
   }
     
-  componentDidMount() {
+  componentWillMount() {
     if(auth0Client.isAuthenticated()){
-      this.setState({id:auth0Client.getUserId()});
-    } 
-    else {
-      this.setState({id: "5bd6993dc3094a3a0d39b135"})
-    }
+      this.setState({id:auth0Client.getUserId()});}
+    // } else {
+    //   this.setState({id: "5bd6993dc3094a3a0d39b135"})
+    // }
   }
   
   
