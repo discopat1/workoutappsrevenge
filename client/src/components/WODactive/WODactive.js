@@ -11,12 +11,17 @@ class WODactive extends Component {
     super(props)
     this.state = {
     finishedExercises: [],
-    id: auth0Client.getUserId()
+    id: ""
     }
     this.addExercise = this.addExercise.bind(this);
     this.getReps = this.getReps.bind(this);
   }
     
+  componentDidMount() {
+    if(auth0Client.isAuthenticated()){
+      this.setState({id:auth0Client.getUserId()});
+    }
+  }
   
   
   addExercise = exercise => {
