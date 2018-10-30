@@ -49,7 +49,8 @@ const workoutInputSchema = new Schema({
     sets: { type: Number },
     reps: [Number],
     weight: [Number]
-  }
+  },
+  date: { type: Date, default: Date.now }
   
 });
 
