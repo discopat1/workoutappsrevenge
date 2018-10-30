@@ -126,7 +126,7 @@ class WODoptions extends Component {
       "romanChair",
       "physioball"
     ]);
-    if (!this.state.time || !this.state.purpose || !this.state.bodyParts || !this.state.equipment) {
+    if (!this.state.time || !this.state.purpose) {
       alert("Please choose an option!")
     } else {
       API.postWorkoutOptions(id, {

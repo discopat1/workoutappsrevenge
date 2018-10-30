@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./WorkoutInputForm.css";
 
 
+
 // save each exercise to state by adding to an array - that will be a submit for each exercise and add to an array of exercises for that day
 // then there will a save workout button that posts that array of exercises to the workout history database
 // so the state array will be saved in the wod active page and sent out from there

@@ -8,7 +8,9 @@ class UserProfile extends Component {
   state = {
     id: "",
     account: {},
-    array: []
+    array: [],
+    bench: "",
+    squat: ""
   };
 
   componentWillMount() {
@@ -33,6 +35,26 @@ class UserProfile extends Component {
 
   componentDidMount() {
     this.handleCheckUserExists(this.state.id)
+  }
+
+  componentDidUpdate() {
+    this.findOneRep()
+  }
+
+  round5 = (x) => {
+    return (x % 5) >= 2.5 ? parseInt(x / 5) * 5 + 5 : parseInt(x / 5) * 5;
+  }
+
+  findOneRep = () => {
+    const id = this.state.account.oneRepMax;
+    API.findOneRep(id)
+    .then(res => {
+      this.setState({
+        bench: res.data.bench,
+        squat: res.data.squat
+      })
+    })
+    .catch(err => console.log(err));
   }
 
   handleCheckUserExists = (id) => {
@@ -65,10 +87,22 @@ class UserProfile extends Component {
   }
 
   render() {
+    const bench = this.round5(this.state.bench);
+    const squat = this.round5(this.state.squat);
+    const deadlift = this.round5(squat * 1.2);
     const name = this.state.account.name;
+    // console.log("account one rep===", this.state.account.oneRepMax)
     return (
       <div>
         <h1>Hello, {name}!</h1>
+        <h2>Your One Rep Max or Estimated One Rep Maxes:</h2>
+            <p>
+              Bench: {bench}
+              <br/>
+              Squat: {squat}
+              <br/>
+              Deadlift: {deadlift}
+            </p>
       </div>
     )
   }
