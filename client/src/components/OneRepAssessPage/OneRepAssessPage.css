@@ -1,0 +1,30 @@
+.ora_container {
+   width: 90%;
+   margin: 0 auto;
+}
+
+.ora_header {
+   font-family: Roboto;
+   font-weight: 300;
+   font-size: 2.5rem;
+}
+
+.ora_header > p {
+   margin-bottom:0;
+   /* padding:0; */
+}
+
+.ora_article {
+   display: flex;
+   flex-direction: row;
+   width: 100vw;
+   height: 100vh;
+}
+
+.ora_box1 {
+   flex-basis: calc(30% - 40px);
+}
+
+.ora_box2 {
+   flex-basis: calc(30% - 40px);
+}
