@@ -232,20 +232,28 @@ const findWeight = async function(id, data, purpose) {
             break;
             default:
             maxWeight = "undefined";
+            function round5(x) {
+                return (x % 5) >= 2.5 ? parseInt(x / 5) * 5 + 5 : parseInt(x / 5) * 5;
+            }
             function purposeWeight(weight) {
                 if (purpose === "speed") {
-                    datum.weight = Math.floor(weight * 0.40)
+                    datum.weight = round5(weight * 0.40);
+                    datum.reps = "3-5";
                 } else if (purpose === "strength") {
-                    datum.weight = Math.floor(weight * 0.75)
+                    datum.weight = round5(weight * 0.75);
+                    datum.reps = "6-10";
                 } else if (purpose === "sculpt") {
-                    datum.weight = Math.floor(weight * 0.60)
+                    datum.weight = round5(weight * 0.60);
+                    datum.reps = "10-15";
                 }
             }
     
         } // end switch
+        console.log("reps ==== ", datum.reps);
         console.log("data  ========", data);
-        console.log("maxweight", maxWeight)
-        console.log("datum ========", datum.weight)
+        console.log("maxweight", maxWeight);
+        console.log("datum weight ========", datum.weight);
+        console.log("datum ===== ", datum);
     } // end for loop
     return;
 };

@@ -147,6 +147,7 @@ class WODoptions extends Component {
     // use auth0 to get correct id
     const userID = auth0Client.getUserId();
     // const userID = "5bd5e223a9fef2378f258bbe"
+    console.log("user id", userID)
     API.getUserProfile(userID)
     .then(res => this.setState({
        id: res.data[0].oneRepMax

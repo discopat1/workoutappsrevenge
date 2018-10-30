@@ -7,7 +7,8 @@ const exerciseListSchema = new Schema({
   bodyparts: [String],
   equipment: [String],
   style: { type: String, required: true },
-  weight: {type: Number}
+  weight: {type: Number},
+  reps: { type: String }
 });
 
 

@@ -1,32 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
 const exercises = JSON.parse(localStorage.getItem("exercises"));
 
 
 
 
-class DisplayExercises extends Component {
-    constructor(props) {
-        super(props)
-        this.getReps = this.getReps.bind(this);
-    }
-     getReps = () => {
-        this.props.getReps();
-     }   
-     
+const DisplayExercises = () => (
         
-    render() {
-        return (
         exercises.map(exercise => (
         <div>
-            <div>Exercise: { exercise.name }</div>
-            <div>Sets: 3-5</div>
-            <div>Reps: { this.getReps } </div>
-            <div>Weight: { exercise.weight }</div>
+            <ul key={exercise.id}>
+                <li>Exercise: { exercise.name }</li>
+                <li>Sets: 3-5</li>
+                <li>Reps: { exercise.reps } </li>
+                <li>Weight: { exercise.weight }</li>
+            </ul>
             <br/>
         </div>
-    ))
-        )
-    }
-}
+        ))
+     )
+   
 
 export default DisplayExercises;
