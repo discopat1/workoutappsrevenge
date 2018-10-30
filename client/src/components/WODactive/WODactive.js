@@ -4,6 +4,7 @@ import API from "../utils/API"
 import DisplayExercises from "../DisplayExercises/Index";
 import Navbar from "../Navbar";
 import auth0Client from "../Auth";
+import { Link } from "react-router-dom";
 
 
 class WODactive extends Component {
@@ -64,7 +65,9 @@ class WODactive extends Component {
         exercise7: this.state.finishedExercises[6],
         exercise8: this.state.finishedExercises[7]
       })
-      .then(() => {window.location.href= "/dashboard"})
+      .then(() => this.setState({
+        finishedExercises: ""
+      }))
       .catch(err => console.log(err));
     } else {
       alert("Input some exercises");
@@ -101,7 +104,7 @@ class WODactive extends Component {
             </li>
             ))}
           </ul>
-          <button onClick={()=> {this.handleFormSubmit(id)}}>Save workout</button>
+          <button onClick={()=> {this.handleFormSubmit(id)}}><Link to="/dashboard">Save workout</Link></button>
         </div>
       )
     };
