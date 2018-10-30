@@ -65,6 +65,7 @@ class WODactive extends Component {
 
   render() {
     const id = this.state.id;
+    // const id = "5bd5e745e3128c3b7c65e888";
     console.log(this.state.finishedExercises);
     return (
         <div>

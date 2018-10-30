@@ -30,4 +30,7 @@ router.route("/Profile/:id")
 // Route ro get all profiles with one rep maxes
 router.route("/PopulatedUser")
     .get(exerciseListController.getPopulatedUser)
+// Route to seed all exercises (just in case)
+router.route("/Seed")
+    .post(exerciseListController.seedExercises)
 module.exports = router;

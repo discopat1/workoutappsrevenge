@@ -225,6 +225,20 @@ var controller = {
             // If an error occurs, send it back to the client
             res.json(err);
         });
+    },
+    // Route to seed exercises (just in case....)
+    seedExercises: function(req, res) {
+        db.ExerciseList
+        .remove({})
+        .then(() => db.ExerciseList.collection.insertMany(req.body))
+        .then(data => {
+            console.log(data.result.n + " records inserted!");
+            process.exit(0);
+        })
+        .catch(err => {
+            console.error(err);
+            process.exit(1);
+        });
     }
   
 
