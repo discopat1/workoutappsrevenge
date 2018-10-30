@@ -82,6 +82,7 @@ class WODoptions extends Component {
         value={bodyPart}
         checked={this.state[bodyPart]}
         onChange={this.handleBodyPartChange}
+        color="primary"
       />
       <label key={bodyPart}>{bodyPartLabels[bodyPart]}</label>
       &nbsp;&nbsp;&nbsp;
