@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./SelfAssessForm.css";
 import API from "../utils/API";
 import auth0Client from "../Auth";
+import { Link } from "react-router-dom";
 
 class SAForm extends Component {
     state = {
@@ -10,10 +11,6 @@ class SAForm extends Component {
       weight: "",
       id: auth0Client.getUserId()
     };
-
-  componentDidMount() {
-    console.log(this.state.id);
-  }
     
   handleInputChange = event => {
 
@@ -36,13 +33,9 @@ class SAForm extends Component {
             bench: parseInt(this.state.bench),
             squat: parseInt(this.state.squat),
             weight: parseInt(this.state.weight)
-          }).then(() => this.setState({
-            bench: "",
-            squat: "",
-            weight: "",
-          }))
-            .catch(err => console.log(err));
-            window.location.href="/wodoptions"
+          })
+          .catch(err => console.log(err));
+            
         } else {
           alert("Fill out your max reps please!");
         }
@@ -80,7 +73,7 @@ class SAForm extends Component {
             type="text"
             placeholder="Your bodyweight!"
           />
-          <button onClick={() =>{this.handleFormSubmit(id)}}>Submit</button>
+          <button onClick={() =>{this.handleFormSubmit(id)}}><Link to="/dashboard">Submit</Link></button>
         </form>
       </div>
     );

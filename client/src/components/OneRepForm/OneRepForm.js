@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./OneRepForm.css";
 import API from "../utils/API";
 import auth0Client from "../Auth";
+import { Link } from "react-router-dom";
 
 class ORForm extends Component {
   state = {
@@ -29,12 +30,9 @@ class ORForm extends Component {
         bench: parseInt(this.state.bench),
         squat: parseInt(this.state.squat)
       })
-      .then(() => this.setState({
-        bench: "",
-        squat: "",
-      }))
+      .then(() => {window.location.href = "/dashboard"})
       .catch(err => console.log(err));
-      window.location.href = "/wodoptions"
+      
     } else {
       alert("Fill out your one rep max please!");
     }
@@ -65,7 +63,7 @@ class ORForm extends Component {
             type="text"
             placeholder="Squat 1RM!"
           />
-          <button onClick={() =>{this.handleFormSubmit(id)}}>Submit</button>
+          <button onClick={() =>{this.handleFormSubmit(id)}}><Link to="/dashboard">Submit</Link></button>
         </form>
       </div>
     );
