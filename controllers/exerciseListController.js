@@ -199,7 +199,7 @@ var controller = {
             // If a one rep max was created successfully, find one User profile  and push the new one rep's _id to the User's one rep field
             // { new: true } tells the query that we want it to return the updated User profile -- it returns the original by default
             // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
-            return db.UserProfile.findOneAndUpdate({ _id: req.params.id }, { $push: { workoutHistory: dbWorkoutInput._id } }, { new: true });
+            return db.UserProfile.findOneAndUpdate({ id: req.params.id }, { $push: { workoutHistory: dbWorkoutInput._id } }, { new: true });
         })
         .then(function(dbUserProfile) {
             // If the User Profile was updated successfully, send it back to the client
