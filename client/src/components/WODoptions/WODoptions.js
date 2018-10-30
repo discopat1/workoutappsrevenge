@@ -69,6 +69,7 @@ class WODoptions extends Component {
         value={equipment}
         checked={this.state[equipment]}
         onChange={this.handleEquipmentChange}
+        color="primary"
       />{" "}
       <label key={equipment}>{equipmentLabels[equipment]}</label>
       &nbsp;&nbsp;&nbsp;
