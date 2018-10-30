@@ -12,8 +12,8 @@ class WODForm extends Component {
     this.state = {
       name: "",
       sets: "",
-      reps: "",
-      weight: ""
+      reps: [],
+      weight: []
     }
     this.handleFormSubmit =this.handleFormSubmit.bind(this);
   }
@@ -29,6 +29,8 @@ class WODForm extends Component {
         [name]: value
       });
   };
+
+  
 
    handleFormSubmit = event => {
     event.preventDefault();

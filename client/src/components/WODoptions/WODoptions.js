@@ -126,22 +126,25 @@ class WODoptions extends Component {
       "romanChair",
       "physioball"
     ]);
-
-    API.postWorkoutOptions(id, {
-      time: this.state.time,
-      purpose: this.state.purpose,
-      bodyparts: this.getKeyByTrue(bParts),
-      equipment: this.getKeyByTrue(equip)
-    }).then(data => {
-      const compound = data.data.dbCompound;
-      const accessory = data.data.dbAccessory;
-      const exerciseArr = compound.concat(accessory);
-      console.log("full exercise array", exerciseArr);
-      console.log("purpose,", this.state.purpose);
-      localStorage.setItem("exercises", JSON.stringify(exerciseArr));
-      sessionStorage.setItem("purpose", this.state.purpose);
-      window.location.href = "/wodactive"
-    });
+    if (!this.state.time || !this.state.purpose || !this.state.bodyParts || !this.state.equipment) {
+      alert("Please choose an option!")
+    } else {
+      API.postWorkoutOptions(id, {
+        time: this.state.time,
+        purpose: this.state.purpose,
+        bodyparts: this.getKeyByTrue(bParts),
+        equipment: this.getKeyByTrue(equip)
+      }).then(data => {
+        const compound = data.data.dbCompound;
+        const accessory = data.data.dbAccessory;
+        const exerciseArr = compound.concat(accessory);
+        console.log("full exercise array", exerciseArr);
+        console.log("purpose,", this.state.purpose);
+        localStorage.setItem("exercises", JSON.stringify(exerciseArr));
+        sessionStorage.setItem("purpose", this.state.purpose);
+        window.location.href = "/wodactive"
+      });
+    }
   };
 
   componentDidMount() {
