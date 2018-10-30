@@ -6,14 +6,39 @@ import { isNull } from "util";
 
 class UserProfile extends Component {
   state = {
-    id: auth0Client.getUserId(),
+    id: "",
     account: {},
     array: []
   };
 
+  componentWillMount() {
+    if(auth0Client.isAuthenticated()){
+      this.setState({id: auth0Client.getUserId()})
+      // this.handleCheckUserExists(this.state.id);
+    } else {
+      auth0Client.signIn();
+    }
+    
+    // if (this.state.array.length === 0) {
+    //   this.handleCreateUser({
+    //     id: auth0Client.getUserId(),
+    //     name: auth0Client.getUserName(),
+    //     email: auth0Client.getUserEmail()
+    //   })
+    //   this.handleUserExists(this.state.id);
+    // } else {
+    //   this.handleUserExists(this.state.id);
+    // }
+  };
+
   componentDidMount() {
-    this.handleCheckUserExists(this.state.id);
-    if (this.state.array.length === 0) {
+    this.handleCheckUserExists(this.state.id)
+  }
+
+  handleCheckUserExists = (id) => {
+    API.getUserProfile(id)
+    .then(res => this.setState({array: res.data}))
+    .then(() =>{if (this.state.array.length === 0) {
       this.handleCreateUser({
         id: auth0Client.getUserId(),
         name: auth0Client.getUserName(),
@@ -22,12 +47,7 @@ class UserProfile extends Component {
       this.handleUserExists(this.state.id);
     } else {
       this.handleUserExists(this.state.id);
-    }
-  };
-
-  handleCheckUserExists = id => {
-    API.getUserProfile(id)
-    .then(res => this.setState({array: res.data}))
+    }})
     .catch(err => console.log(err));
   };
 
