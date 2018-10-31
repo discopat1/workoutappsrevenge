@@ -71,6 +71,7 @@ class WODoptions extends Component {
         value={equipment}
         checked={this.state[equipment]}
         onChange={this.handleEquipmentChange}
+        color="primary"
       />{" "}
       <label key={equipment}>{equipmentLabels[equipment]}</label>
       &nbsp;&nbsp;&nbsp;
@@ -128,27 +129,30 @@ class WODoptions extends Component {
       "physioball"
     ]);
 
-    API.postWorkoutOptions(id, {
-      time: this.state.time,
-      purpose: this.state.purpose,
-      bodyparts: this.getKeyByTrue(bParts),
-      equipment: this.getKeyByTrue(equip)
-    }).then(data => {
-      const compound = data.data.dbCompound;
-      const accessory = data.data.dbAccessory;
-      const exerciseArr = compound.concat(accessory);
-      console.log("full exercise array", exerciseArr);
-      console.log("purpose,", this.state.purpose);
-      localStorage.setItem("exercises", JSON.stringify(exerciseArr));
-      sessionStorage.setItem("purpose", this.state.purpose);
-      // window.location.href = "/wodactive"
-    });
-  };
+    if (!this.state.time || !this.state.purpose) {
+      alert("Please choose an option!")
+    } else {
+      API.postWorkoutOptions(id, {
+        time: this.state.time,
+        purpose: this.state.purpose,
+        bodyparts: this.getKeyByTrue(bParts),
+        equipment: this.getKeyByTrue(equip)
+      }).then(data => {
+        const compound = data.data.dbCompound;
+        const accessory = data.data.dbAccessory;
+        const exerciseArr = compound.concat(accessory);
+        console.log("full exercise array", exerciseArr);
+        console.log("purpose,", this.state.purpose);
+        localStorage.setItem("exercises", JSON.stringify(exerciseArr));
+        sessionStorage.setItem("purpose", this.state.purpose);
+      });
+    }
 
   componentDidMount() {
     // use auth0 to get correct id
     const userID = auth0Client.getUserId();
     // const userID = "5bd5e223a9fef2378f258bbe"
+    console.log("user id", userID)
     API.getUserProfile(userID)
     .then(res => this.setState({
        id: res.data[0].oneRepMax

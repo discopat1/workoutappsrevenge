@@ -15,7 +15,6 @@ class WODactive extends Component {
     id: ""
     }
     this.addExercise = this.addExercise.bind(this);
-    this.getReps = this.getReps.bind(this);
   }
     
   componentWillMount() {
@@ -36,22 +35,12 @@ class WODactive extends Component {
     })
   }
 
-  getReps = () => {
-    const purpose = sessionStorage.getItem('purpose');
-        if (purpose === 'speed') {
-            return '3-5'
-        } else if (purpose === 'strength') {
-            return '8-10'
-        } else if (purpose === 'sculpt') {
-            return '10-15'
-        }
-    }
+  
   
 
   // This function actually belongs in active page
   handleFormSubmit = (id) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
-    console.log("before prevent");
     console.log("after prevent");
     if (this.state.finishedExercises) {
       API.postWorkoutInput(id,
@@ -65,9 +54,6 @@ class WODactive extends Component {
         exercise7: this.state.finishedExercises[6],
         exercise8: this.state.finishedExercises[7]
       })
-      .then(() => this.setState({
-        finishedExercises: ""
-      }))
       .catch(err => console.log(err));
     } else {
       alert("Input some exercises");
@@ -86,8 +72,7 @@ class WODactive extends Component {
           <p>
             Lift heavy stuff
           </p>
-          <DisplayExercises 
-          getReps={this.getReps}/>
+          <DisplayExercises />
           <WODForm 
           addExercise={this.addExercise}/>
           <ul>
@@ -103,6 +88,7 @@ class WODactive extends Component {
               <br/>
             </li>
             ))}
+            <br/>
           </ul>
           <button onClick={()=> {this.handleFormSubmit(id)}}><Link to="/dashboard">Save workout</Link></button>
         </div>
