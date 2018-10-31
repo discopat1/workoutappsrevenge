@@ -1,17 +1,52 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
 import UserProfile from "../ProfileCard";
 import Navbar from "../Navbar";
+import "./Dashboard.css";
 
-const Dash = () => (
-  <div>
-    <Navbar />
-    <h1>Dashboard page</h1>
-    <p>
-      Hi, I'm Dashboard.
-    </p>
-  <UserProfile />
+const styles = theme => ({
+  root: {
+    width: "95%",
+    marginTop: 40,
+    marginLeft: 25,
+    height: "100vh"
+  },
+  leftBox: {
+    backgroundColor:"gray",
+    height:"100vh",
+  },
+  rightBox: {
+    backgroundColor:"lightgray",
+    height:"100vh",
+  },
+});
 
-  </div>
-);
+function Dash(props) {
+  const { classes } = props;
+  return (
+    <React.Fragment>
+      <Navbar />
+      <div className={classes.root}>
+        <p className="vid_header">Dashboard</p>
+        <Grid container spacing={24}>
+          <Grid item xs={4} className={classes.leftBox}>
+            content
+          </Grid>
 
-export default Dash;
+          <Grid item xs={8} className={classes.rightBox}>
+            content
+          </Grid>
+        </Grid>
+      </div>
+    </React.Fragment>
+  );
+}
+
+Dash.propTypes = {
+  classes: PropTypes.object.isRequired
+};
+
+export default withStyles(styles)(Dash);
