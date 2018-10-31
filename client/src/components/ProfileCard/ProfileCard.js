@@ -43,20 +43,6 @@ class UserProfile extends Component {
     return (x % 5) >= 2.5 ? parseInt(x / 5) * 5 + 5 : parseInt(x / 5) * 5;
   }
 
-  
-  //  componentDidUpdate() {
-  //   const id = this.state.account.oneRepMax;
-  //   console.log("one rep id===", id)
-  //   API.findOneRep(id)
-  //   .then(res => {
-  //     this.setState({
-  //       bench: res.data.bench,
-  //       squat: res.data.squat
-  //     })
-  //   })
-  //   .catch(err => console.log(err));
-  // }
-
   handleCheckUserExists = (id) => {
     API.getUserProfile(id)
     .then(res => this.setState({array: res.data}))
@@ -76,7 +62,17 @@ class UserProfile extends Component {
   handleUserExists = id => {
     API.getUserProfile(id)
     // .then(res => console.log(res.data))
-    .then(res => this.setState({ account: res.data[0]} ))
+    .then(res =>{
+    API.findOneRep(res.data[0].oneRepMax)
+    .then(res => {
+      this.setState({
+        bench: res.data.bench,
+        squat: res.data.squat
+      })
+    })
+    .catch(err => console.log(err));
+     this.setState({ account: res.data[0]})
+    })
     .catch(err => console.log(err));
   };
 
