@@ -145,8 +145,10 @@ class WODoptions extends Component {
         console.log("purpose,", this.state.purpose);
         localStorage.setItem("exercises", JSON.stringify(exerciseArr));
         sessionStorage.setItem("purpose", this.state.purpose);
+        window.location.href="/wodactive";
       });
     }
+  }
 
   componentDidMount() {
     // use auth0 to get correct id
@@ -159,6 +161,7 @@ class WODoptions extends Component {
     }))
     .catch(err => console.log(err));
   }
+
 
   render() {
     const id = this.state.id

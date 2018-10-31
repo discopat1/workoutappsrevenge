@@ -37,25 +37,25 @@ class UserProfile extends Component {
     this.handleCheckUserExists(this.state.id)
   }
 
-  componentDidUpdate() {
-    this.findOneRep()
-  }
+   
 
   round5 = (x) => {
     return (x % 5) >= 2.5 ? parseInt(x / 5) * 5 + 5 : parseInt(x / 5) * 5;
   }
 
-  findOneRep = () => {
-    const id = this.state.account.oneRepMax;
-    API.findOneRep(id)
-    .then(res => {
-      this.setState({
-        bench: res.data.bench,
-        squat: res.data.squat
-      })
-    })
-    .catch(err => console.log(err));
-  }
+  
+  //  componentDidUpdate() {
+  //   const id = this.state.account.oneRepMax;
+  //   console.log("one rep id===", id)
+  //   API.findOneRep(id)
+  //   .then(res => {
+  //     this.setState({
+  //       bench: res.data.bench,
+  //       squat: res.data.squat
+  //     })
+  //   })
+  //   .catch(err => console.log(err));
+  // }
 
   handleCheckUserExists = (id) => {
     API.getUserProfile(id)
