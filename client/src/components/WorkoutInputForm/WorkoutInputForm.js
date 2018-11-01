@@ -25,11 +25,7 @@ const styles = theme => ({
 });
 
 const exercises = JSON.parse(localStorage.getItem("exercises"));
-const exerciseName = () => {
-  exercises.map(exercise => {
-    return exercise.name;
-  })
-}
+
 
 // console.log("exercise name", this.exerciseName)
 
@@ -42,8 +38,8 @@ class WODForm extends Component {
     super(props)
     this.state = {
       name: "",
-      sets: "",
-      reps: [],
+      sets: '',
+      reps: '',
       weight: []
     }
     this.handleFormSubmit =this.handleFormSubmit.bind(this);
@@ -74,43 +70,19 @@ class WODForm extends Component {
     return (
       <div>
         <form className="form">
-          <label htmlFor="exercise">Name</label>
-          <input
-            value={this.state.name}
-            name="name"
-            onChange={this.handleInputChange}
-            type="text"
-            placeholder="Exercise Name"
-          />
-          <label htmlFor="exercise">Sets</label>
-          <input
-            value={this.state.sets}
-            name="sets"
-            onChange={this.handleInputChange}
-            type="text"
-            placeholder="How many sets?"
-          />
-          <label htmlFor="exercise">Reps</label>
-          <input
-            value={this.state.reps}
-            name="reps"
-            onChange={this.handleInputChange}
-            type="text"
-            placeholder="How many reps"
-          />
-          <label htmlFor="exercise">Weight</label>
-          <input
-            value={this.state.weight}
-            name="weight"
-            onChange={this.handleInputChange}
-            type="text"
-            placeholder="Weight"
-          />
           <TextField
+          id="exercise-name"
           select
+          name="name"
           label="Name"
-          value="name"
+          className={classes.textField}
+          value={this.state.name}
           onChange={this.handleInputChange}
+          SelectProps={{
+            MenuProps: {
+              className: classes.menu,
+            },
+          }}
           helperText="Select your exercise"
           margin="normal"
         >
@@ -120,10 +92,55 @@ class WODForm extends Component {
             </MenuItem>
           ))}
         </TextField>
+          <br/>
+          <TextField
+          id="sets"
+          name="sets"
+          label="Sets"
+          value={this.state.sets}
+          onChange={this.handleInputChange}
+          type="number"
+          className={classes.textField}
+          InputLabelProps={{
+            shrink: true,
+          }}
+          margin="normal"
+        />
+          <br/>
+          <TextField
+          id="reps"
+          name="reps"
+          label="Reps"
+          value={this.state.reps}
+          onChange={this.handleInputChange}
+          type="number"
+          className={classes.textField}
+          InputLabelProps={{
+            shrink: true,
+          }}
+          margin="normal"
+        />
+          <br/>
+          <TextField
+          id="weight"
+          name="weight"
+          label="Weight"
+          type="number"
+          className={classes.textField}
+          value={this.state.weight}
+          onChange={this.handleInputChange}
+          margin="normal"
+        />
+          <br/>
           <button onClick={this.handleFormSubmit}>Submit</button>
         </form>
       </div>
     );
   }
 }
- export default WODForm; 
+
+WODForm.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+ export default withStyles(styles)(WODForm); 
