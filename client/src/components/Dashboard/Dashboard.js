@@ -38,7 +38,6 @@ function Dash(props) {
 
           <Grid item xs={8} className={classes.rightBox}>
           <UserProfile />
-            content
           </Grid>
         </Grid>
       </div>

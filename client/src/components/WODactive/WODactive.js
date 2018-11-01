@@ -32,7 +32,6 @@ class WODactive extends Component {
     super(props)
     this.state = {
     finishedExercises: [],
-    id: ""
     }
     this.addExercise = this.addExercise.bind(this);
   }
@@ -122,9 +121,9 @@ class WODactive extends Component {
     };
   }
 
-  // WODactive.propTypes = {
-  //   classes: Proptypes.object.isRequired
-  // }
+  WODactive.propTypes = {
+    classes: PropTypes.object.isRequired
+  };
     
 
 export default withStyles(styles)(WODactive);
