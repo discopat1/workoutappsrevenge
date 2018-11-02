@@ -17,18 +17,18 @@ var bodyParser = require("body-parser");
 
 // Define middleware here
 //Session related stuff
-var sess = {
-  secret: 'workoutapp',
-  cookie: {},
-  resave: false,
-  saveUninitialized: true
-};
+// var sess = {
+//   secret: 'workoutapp',
+//   cookie: {},
+//   resave: false,
+//   saveUninitialized: true
+// };
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(session(sess));
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(session(sess));
+// app.use(passport.initialize());
+// app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/', authRouter);
 
@@ -48,45 +48,45 @@ app.use(function (req, res, next) {
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/exerciselist");
 
-if (app.get('env') === 'production') {
-  sess.cookie.secure = true; //serve secure cookies, requires https
-};
+// if (app.get('env') === 'production') {
+//   sess.cookie.secure = true; //serve secure cookies, requires https
+// };
 
-var strategy = new Auth0Strategy({
-  domain: 'workoutapp.auth0.com',
-  clientID: 'fkSbNMsnAOUII0epY5hnBddf3druZMDb',
-  clientSecret: '_CyS3Rq7O48zQ1TyN3uWlcg1h1awtjhyLnWS_MSygUky9BpCnQnqOYoANFiQNqS1',
-  callbackURL: 'https://workoutappsrevenge.herokuapp.com/callback',
-  state: true
-},
+// var strategy = new Auth0Strategy({
+//   domain: 'workoutapp.auth0.com',
+//   clientID: 'fkSbNMsnAOUII0epY5hnBddf3druZMDb',
+//   clientSecret: '_CyS3Rq7O48zQ1TyN3uWlcg1h1awtjhyLnWS_MSygUky9BpCnQnqOYoANFiQNqS1',
+//   callbackURL: 'https://workoutappsrevenge.herokuapp.com/callback',
+//   state: true
+// },
 
-function(accessToken, refreshToken, extraParams, profile, done) {
-     // accessToken is the token to call Auth0 API (not needed in the most cases)
-   // extraParams.id_token has the JSON Web Token
-   // profile has all the information from the user
-   return done(null, profile);
-}
-);
+// function(accessToken, refreshToken, extraParams, profile, done) {
+//      // accessToken is the token to call Auth0 API (not needed in the most cases)
+//    // extraParams.id_token has the JSON Web Token
+//    // profile has all the information from the user
+//    return done(null, profile);
+// }
+// );
 
-passport.use(strategy);
+// passport.use(strategy);
 
 
-passport.serializeUser(function(user, done) {
-  done(null, user);
-});
+// passport.serializeUser(function(user, done) {
+//   done(null, user);
+// });
 
-passport.deserializeUser(function(user, done) {
-  done(null, user);
-});
+// passport.deserializeUser(function(user, done) {
+//   done(null, user);
+// });
 
-// Look up session to know if user is logged in 
-app.use(function(req, res, next) {
-  res.locals.loggedIn = false;
-  if (req.session.passport && typeof req.session.passport.user !== 'undefined') {
-    res.locals.loggedIn = true;
-  }
-  next();
-});
+// // Look up session to know if user is logged in 
+// app.use(function(req, res, next) {
+//   res.locals.loggedIn = false;
+//   if (req.session.passport && typeof req.session.passport.user !== 'undefined') {
+//     res.locals.loggedIn = true;
+//   }
+//   next();
+// });
 
 app.use(routes);
 
