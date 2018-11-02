@@ -33,6 +33,6 @@ router.route("/PopulatedUser")
 // Route to seed all exercises (just in case)
 router.route("/Seed")
     .post(exerciseListController.seedExercises)
-router.route("/WorkoutHistory/:id")
-    .get(exerciseListController.getWorkoutHistory)
+router.route("/gethistory")
+    .post(exerciseListController.getWorkoutHistory)
 module.exports = router;

@@ -241,14 +241,13 @@ var controller = {
         });
     },
     getWorkoutHistory: function(req, res) {
-        
-        db.WorkoutInput.find
+        console.log(req.body.array)
+        const array = req.body.array;
+        db.WorkoutInput.find({_id: array})
+        .then(dbModel => {console.log("Returned: ", dbModel)
+        res.json(dbModel)
+        }).catch(err => res.status(422).json(err));
     }
-  
-
-
-
-
 };
 
 module.exports = controller

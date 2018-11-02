@@ -31,7 +31,8 @@ export default {
   findOneRep: function(id) {
     return axios.get("/api/exercises/ActualOneRep/" + id)
   },
-  findWorkoutHistory: function([id]) {
-    return axios.get("/api/exercises/WorkoutHistory/" + [id])
+  findHistory: function(input) {
+        console.log(input)
+    return axios.post("/api/exercises/gethistory", input)
   }
 };
