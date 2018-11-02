@@ -147,7 +147,7 @@ class WODoptions extends Component {
         sessionStorage.setItem("purpose", this.state.purpose);
       });
     }
-
+  }
   componentDidMount() {
     // use auth0 to get correct id
     const userID = auth0Client.getUserId();
@@ -159,7 +159,7 @@ class WODoptions extends Component {
     }))
     .catch(err => console.log(err));
   }
-
+  
   render() {
     const id = this.state.id
     console.log("one rep id", id);
