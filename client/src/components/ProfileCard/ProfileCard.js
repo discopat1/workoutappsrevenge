@@ -20,17 +20,6 @@ class UserProfile extends Component {
     } else {
       auth0Client.signIn();
     }
-    
-    // if (this.state.array.length === 0) {
-    //   this.handleCreateUser({
-    //     id: auth0Client.getUserId(),
-    //     name: auth0Client.getUserName(),
-    //     email: auth0Client.getUserEmail()
-    //   })
-    //   this.handleUserExists(this.state.id);
-    // } else {
-    //   this.handleUserExists(this.state.id);
-    // }
   };
 
   componentDidMount() {
