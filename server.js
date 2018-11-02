@@ -56,7 +56,7 @@ var strategy = new Auth0Strategy({
   domain: 'workoutapp.auth0.com',
   clientID: 'uni-ZJF0sZlESyexemvyQ1okpf3zx-Sm',
   clientSecret: 'Q9omx-09Mvgbv2jwR8yqXLISSFZZRAeuYngQazOrbL4VQOY2JZN-STRWY4ErIL9e',
-  callbackURL: 'http://localhost:3000/dashboard',
+  callbackURL: 'https://workoutappsrevenge.herokuapp.com/dashboard',
   state: true
 },
 
