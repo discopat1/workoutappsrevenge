@@ -6,7 +6,7 @@ import API from "../utils/API";
 
 
 const columns = [
-    {title: "Date ", field: "date", align: "center"},
+    {title: "Date ", field: "date", align: "center", frozen: true},
     {
         title: "Exercise 1",
         columns:[            
@@ -119,7 +119,8 @@ class Table extends Component {
     render() {
         const data = this.state.data;
         const options = {
-            layout: "fitData"
+            layout: "fitData",
+            placeholder:"Conduct a workout to see your history."
         };
     
         return(
