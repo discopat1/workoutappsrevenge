@@ -109,7 +109,7 @@ var controller = {
                     } else if (maxReps.squats === 0) {
                         multiplier = 0.75;
                     } else {
-                        multiplier = ((maxReps.squats - 1) * 0.03) + 1
+                        multiplier = ((maxReps.squats - 1) * 0.04) + 1
                     };
                     squatMax = (bodyweight * multiplier) - bodyweight;
                 };
