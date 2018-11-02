@@ -3,6 +3,28 @@ import "./OneRepForm.css";
 import API from "../utils/API";
 import auth0Client from "../Auth";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+
+const styles = theme => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    width: 200,
+  },
+  dense: {
+    marginTop: 19,
+  },
+  menu: {
+    width: 200,
+  },
+});
 
 class ORForm extends Component {
   state = {
@@ -23,50 +45,75 @@ class ORForm extends Component {
       });
     } 
   };
-   handleFormSubmit = (id) => {
+   handleFormSubmit = id => {
     if (this.state.bench && this.state.squat) {
       API.actualOneRep(id,
       {
         bench: parseInt(this.state.bench),
-        squat: parseInt(this.state.squat)
+        squat: parseInt(this.state.squat),
       })
-      .then(() => {window.location.href = "/dashboard"})
       .catch(err => console.log(err));
       
     } else {
       alert("Fill out your one rep max please!");
     }
-    
   };
 
    render() {
+     console.log("ORstate", this.state)
     //  const id = "5bd5e745e3128c3b7c65e888"
+    const { classes } = this.props;
      const id = this.state.id;
-    //  console.log('client ID', auth0.getUserId());
+     console.log("OR user id", id);
     return (
       <div>
         <p>
-          One rep max?
+          If you know your one rep maxes please enter them here
         </p>
-        <form className="form">
-          <input
+        <br/>
+        <br/>
+        <form className="form" onSubmit={this.handleFormSubmit}>
+          <TextField
+            id="bench"
+            label="Bench Press One Rep Max"
             value={this.state.bench}
             name="bench"
             onChange={this.handleInputChange}
-            type="text"
+            type="number"
+            className={classes.textField}
+          InputLabelProps={{
+            shrink: true,
+          }}
+          margin="normal"
             placeholder="Bench 1RM!"
           />
-          <input
+          <br/>
+          <TextField
+            id="squat"
+            label="Squat One Rep Max"
             value={this.state.squat}
             name="squat"
             onChange={this.handleInputChange}
-            type="text"
+            type="number"
+            className={classes.textField}
+          InputLabelProps={{
+            shrink: true,
+          }}
+          margin="normal"
             placeholder="Squat 1RM!"
           />
-          <button onClick={() =>{this.handleFormSubmit(id)}}><Link to="/dashboard">Submit</Link></button>
+          <br/>
+          <button onClick={() =>{this.handleFormSubmit(id)}}>
+          <Link to="/dashboard">Submit</Link>
+          </button>
         </form>
       </div>
     );
   }
 }
- export default ORForm; 
+
+ORForm.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+ export default withStyles(styles)(ORForm); 

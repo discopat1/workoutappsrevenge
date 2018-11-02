@@ -47,7 +47,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=goblet%20squat"
-                        target="_blank"
+                        
                       >
                         Goblet squat
                       </a>
@@ -55,7 +55,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Back%20squat"
-                        target="_blank"
+                        
                       >
                         Back squats
                       </a>
@@ -63,7 +63,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Pistol%20squat"
-                        target="_blank"
+                        
                       >
                         Pistol squats
                       </a>
@@ -71,7 +71,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=k%20squat"
-                        target="_blank"
+                        
                       >
                         K squats
                       </a>
@@ -79,7 +79,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Reverse%20lunge"
-                        target="_blank"
+                        
                       >
                         Reverse lunge
                       </a>
@@ -87,7 +87,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Step%20ups"
-                        target="_blank"
+                        
                       >
                         Step ups
                       </a>
@@ -95,7 +95,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Calf%20raises"
-                        target="_blank"
+                        
                       >
                         Calf raises
                       </a>
@@ -118,7 +118,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Reverse%20lunge"
-                        target="_blank"
+                        
                       >
                         Reverse lunge
                       </a>
@@ -126,7 +126,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Step%20ups"
-                        target="_blank"
+                        
                       >
                         Step ups
                       </a>
@@ -134,7 +134,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Dead%20lift"
-                        target="_blank"
+                        
                       >
                         Dead lift
                       </a>
@@ -142,7 +142,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Romanian%20dead%20lift"
-                        target="_blank"
+                        
                       >
                         Romanian dead lift
                       </a>
@@ -150,7 +150,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Single%20leg%20Romanian%20dead%20lift"
-                        target="_blank"
+                        
                       >
                         Single leg Romanian dead lift
                       </a>
@@ -158,7 +158,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Sumo%20dead%20lift"
-                        target="_blank"
+                        
                       >
                         Sumo dead lift
                       </a>
@@ -166,7 +166,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Snatchs"
-                        target="_blank"
+                        
                       >
                         Snatchs
                       </a>
@@ -174,7 +174,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=clean%20weightlifting"
-                        target="_blank"
+                        
                       >
                         Clean
                       </a>
@@ -182,7 +182,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Facepulls"
-                        target="_blank"
+                        
                       >
                         Facepulls
                       </a>
@@ -190,7 +190,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Back%20Extension"
-                        target="_blank"
+                        
                       >
                         Back Extension
                       </a>
@@ -198,7 +198,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Straight%20arm%20pull%20down"
-                        target="_blank"
+                        
                       >
                         Straight arm pull down
                       </a>
@@ -206,7 +206,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=jerk%20weight%20lift"
-                        target="_blank"
+                        
                       >
                         Jerk
                       </a>
@@ -214,7 +214,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Calf%20raises"
-                        target="_blank"
+                        
                       >
                         Calf raises
                       </a>
@@ -222,7 +222,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Isometric%20YWT"
-                        target="_blank"
+                        
                       >
                         Isometric YWTs
                       </a>
@@ -243,7 +243,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Overhand%20pull-ups"
-                        target="_blank"
+                        
                       >
                         Overhand pull-ups
                       </a>
@@ -251,7 +251,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Underhand%20pull-ups"
-                        target="_blank"
+                        
                       >
                         Underhand pull-ups
                       </a>
@@ -259,7 +259,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Neutral%20pull-ups"
-                        target="_blank"
+                        
                       >
                         Neutral pull-ups
                       </a>
@@ -267,7 +267,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Switch%20pull-ups"
-                        target="_blank"
+                        
                       >
                         Switch pull-ups
                       </a>
@@ -275,7 +275,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Curls%20lifting"
-                        target="_blank"
+                        
                       >
                         Curls
                       </a>
@@ -283,7 +283,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Isometric%20YWT"
-                        target="_blank"
+                        
                       >
                         Isometric YWTs
                       </a>
@@ -304,7 +304,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Skull%20crushers"
-                        target="_blank"
+                        
                       >
                         Skull crushers
                       </a>
@@ -312,7 +312,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Tricep%20extension"
-                        target="_blank"
+                        
                       >
                         Tricep extension
                       </a>
@@ -320,7 +320,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Tricep%20pushdowns"
-                        target="_blank"
+                        
                       >
                         Tricep pushdowns
                       </a>
@@ -328,7 +328,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Bench%20dips"
-                        target="_blank"
+                        
                       >
                         Bench dips
                       </a>
@@ -351,7 +351,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=V%20ups"
-                        target="_blank"
+                        
                       >
                         V ups
                       </a>
@@ -359,7 +359,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Plank%20exercise"
-                        target="_blank"
+                        
                       >
                         Plank
                       </a>
@@ -367,7 +367,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Vertical%20leg%20crunch"
-                        target="_blank"
+                        
                       >
                         Vertical leg crunch
                       </a>
@@ -375,7 +375,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Flutter%20kicks"
-                        target="_blank"
+                        
                       >
                         Flutter kicks
                       </a>
@@ -383,7 +383,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Bicycle%20Kicks%20exercise"
-                        target="_blank"
+                        
                       >
                         Bicycle Kicks
                       </a>
@@ -391,7 +391,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Reverse%20crunch"
-                        target="_blank"
+                        
                       >
                         Reverse crunch
                       </a>
@@ -399,7 +399,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Plank%20jumps"
-                        target="_blank"
+                        
                       >
                         Plank jumps
                       </a>
@@ -407,7 +407,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Bracing%20exercises"
-                        target="_blank"
+                        
                       >
                         Bracing exercises
                       </a>
@@ -415,7 +415,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Anti%20rotation%20exercises"
-                        target="_blank"
+                        
                       >
                         Anti-rotation exercises
                       </a>
@@ -423,7 +423,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Loaded%20carries"
-                        target="_blank"
+                        
                       >
                         Loaded carries
                       </a>
@@ -431,7 +431,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Hanging%20core%20exercises"
-                        target="_blank"
+                        
                       >
                         Hanging exercises
                       </a>
@@ -452,7 +452,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Overhead%20press"
-                        target="_blank"
+                        
                       >
                         Overhead press
                       </a>
@@ -460,7 +460,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Lateral%20raise"
-                        target="_blank"
+                        
                       >
                         Lateral raise
                       </a>
@@ -468,7 +468,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Front%20raise"
-                        target="_blank"
+                        
                       >
                         Front raise
                       </a>
@@ -476,7 +476,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Reverse%20fly"
-                        target="_blank"
+                        
                       >
                         Reverse fly
                       </a>
@@ -497,7 +497,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Bench%20press%20exercise"
-                        target="_blank"
+                        
                       >
                         Bench press
                       </a>
@@ -505,7 +505,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Incline%20bench%20press%20exercise"
-                        target="_blank"
+                        
                       >
                         Incline bench press
                       </a>
@@ -513,7 +513,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Decline%20bench%20press%20exercise"
-                        target="_blank"
+                        
                       >
                         Decline bench press
                       </a>
@@ -521,7 +521,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Cable%20crossovers"
-                        target="_blank"
+                        
                       >
                         Cable crossovers
                       </a>
@@ -529,7 +529,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Flys%20exercise"
-                        target="_blank"
+                        
                       >
                         Flys
                       </a>
@@ -550,7 +550,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Bentover%20row"
-                        target="_blank"
+                        
                       >
                         Bentover row
                       </a>
@@ -558,7 +558,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Onearm%20row"
-                        target="_blank"
+                        
                       >
                         One arm row
                       </a>
@@ -566,7 +566,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Inverted%20row"
-                        target="_blank"
+                        
                       >
                         Inverted row
                       </a>
@@ -574,7 +574,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Dead%20row%20exercise"
-                        target="_blank"
+                        
                       >
                         Dead rows
                       </a>
@@ -582,7 +582,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Seated%20rows"
-                        target="_blank"
+                        
                       >
                         Seated rows
                       </a>
@@ -590,7 +590,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=GDH%20row%20exercise"
-                        target="_blank"
+                        
                       >
                         GDH rows
                       </a>
@@ -598,7 +598,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Overhand%20pull-ups"
-                        target="_blank"
+                        
                       >
                         Overhand pull-ups
                       </a>
@@ -606,7 +606,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Underhand%20pull-ups"
-                        target="_blank"
+                        
                       >
                         Underhand pull-ups
                       </a>
@@ -614,7 +614,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Neutral%20pull-ups"
-                        target="_blank"
+                        
                       >
                         Neutral pull-ups
                       </a>
@@ -622,7 +622,7 @@ function VideoList(props) {
                     <li>
                       <a
                         href="https://www.youtube.com/results?search_query=Switch%20pull-ups"
-                        target="_blank"
+                        
                       >
                         Switch pull-ups
                       </a>
