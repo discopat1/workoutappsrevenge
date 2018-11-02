@@ -111,7 +111,7 @@ class WODactive extends Component {
                 ))}
                 <br/>
               </ul>
-              <button onClick={()=> {this.handleFormSubmit(id)}}><Link to="/dashboard">Save workout</Link></button>
+              <Link to="/dashboard"><button onClick={()=> {this.handleFormSubmit(id)}}>Save workout</button></Link>
           </Grid>
         </Grid>
         </div>

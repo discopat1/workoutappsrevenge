@@ -203,12 +203,12 @@ class WODoptions extends Component {
 
           <div className="footer">
             {/* **** button  ******* */}
-            <Button
+            <Link to='/wodactive'style={{ textDecoration: 'none', color: 'inherit' }}><Button
               variant="contained"
               color="primary"
               onClick={() => this.handleFormSubmit(id)}>
-              <Link to='/wodactive'style={{ textDecoration: 'none', color: 'inherit' }}>Workout Now!</Link>
-            </Button>
+              Workout Now!
+            </Button></Link>
 
             {/* **** end footer ******* */}
           </div>

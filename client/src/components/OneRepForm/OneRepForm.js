@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import "./OneRepForm.css";
 import API from "../utils/API";
 import auth0Client from "../Auth";
-import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { Link } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
@@ -30,8 +30,14 @@ class ORForm extends Component {
   state = {
       bench: "",
       squat: "",
-      id: auth0Client.getUserId()
+      id: ""
     };
+    
+    componentDidMount() {
+      if(auth0Client.isAuthenticated()){
+        this.setState({id:auth0Client.getUserId()});
+      }
+    }
   
    handleInputChange = event => {
     
@@ -45,7 +51,8 @@ class ORForm extends Component {
       });
     } 
   };
-   handleFormSubmit = id => {
+   handleFormSubmit = (id, e) => {
+     e.preventDefault();
     if (this.state.bench && this.state.squat) {
       API.actualOneRep(id,
       {
@@ -53,7 +60,6 @@ class ORForm extends Component {
         squat: parseInt(this.state.squat),
       })
       .catch(err => console.log(err));
-      
     } else {
       alert("Fill out your one rep max please!");
     }
@@ -103,9 +109,9 @@ class ORForm extends Component {
             placeholder="Squat 1RM!"
           />
           <br/>
-          <button onClick={() =>{this.handleFormSubmit(id)}}>
-          <Link to="/dashboard">Submit</Link>
-          </button>
+          <Link to="/dashboard"><button onClick={(e) =>{this.handleFormSubmit(id, e)}}>
+          Submit
+          </button></Link>
         </form>
       </div>
     );
