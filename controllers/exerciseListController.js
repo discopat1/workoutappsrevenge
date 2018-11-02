@@ -239,6 +239,10 @@ var controller = {
             console.error(err);
             process.exit(1);
         });
+    },
+    getWorkoutHistory: function(req, res) {
+        
+        db.WorkoutInput.find
     }
   
 
