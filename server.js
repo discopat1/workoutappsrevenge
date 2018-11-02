@@ -30,7 +30,7 @@ app.use(express.json());
 // app.use(passport.initialize());
 // app.use(passport.session());
 app.use('/', indexRouter);
-app.use('/', authRouter);
+// app.use('/', authRouter);
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
