@@ -9,8 +9,8 @@ class Auth {
       domain: 'workoutapp.auth0.com',
       audience: 'https://workoutapp.auth0.com/userinfo',
       clientID: 'fkSbNMsnAOUII0epY5hnBddf3druZMDb',
-      // redirectUri: 'https://workoutappsrevenge.herokuapp.com/callback',
-      redirectUri: 'http://localhost:3000/callback',
+      redirectUri: 'https://workoutappsrevenge.herokuapp.com/callback',
+      // redirectUri: 'http://localhost:3000/callback',
       responseType: 'token id_token',
       scope: 'openid profile'
     });
@@ -72,7 +72,7 @@ class Auth {
     this.idToken = null;
     this.profile = null;
     this.expiresAt = null;
-    this.auth0.logout({returnTo: 'http://localhost:3000/Logout', clientID:'fkSbNMsnAOUII0epY5hnBddf3druZMDb'});
+    this.auth0.logout({returnTo: 'https://workoutappsrevenge.herokuapp.com/Logout', clientID:'fkSbNMsnAOUII0epY5hnBddf3druZMDb'});
     
   }
 }
