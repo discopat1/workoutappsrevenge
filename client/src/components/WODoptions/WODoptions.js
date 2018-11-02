@@ -145,9 +145,14 @@ class WODoptions extends Component {
         console.log("purpose,", this.state.purpose);
         localStorage.setItem("exercises", JSON.stringify(exerciseArr));
         sessionStorage.setItem("purpose", this.state.purpose);
+        window.location.href="/wodactive";
       });
     }
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5eaf0400f82d43b4b5839ef729874a34606178f6
   componentDidMount() {
     // use auth0 to get correct id
     const userID = auth0Client.getUserId();
@@ -159,7 +164,12 @@ class WODoptions extends Component {
     }))
     .catch(err => console.log(err));
   }
+<<<<<<< HEAD
   
+=======
+
+
+>>>>>>> 5eaf0400f82d43b4b5839ef729874a34606178f6
   render() {
     const id = this.state.id
     console.log("one rep id", id);

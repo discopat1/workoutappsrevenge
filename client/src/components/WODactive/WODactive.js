@@ -5,14 +5,33 @@ import DisplayExercises from "../DisplayExercises/Index";
 import Navbar from "../Navbar";
 import auth0Client from "../Auth";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import "./WODactive.css";
 
+const styles = theme => ({
+  root: {
+    width: "95%",
+    marginTop: 40,
+    marginLeft: 25,
+    height: "100vh"
+  },
+  leftBox: {
+    backgroundColor:"gray",
+    height:"210vh",
+  },
+  rightBox: {
+    backgroundColor:"lightgray",
+    height:"210vh",
+  },
+});
 
 class WODactive extends Component {
   constructor(props) {
     super(props)
     this.state = {
     finishedExercises: [],
-    id: ""
     }
     this.addExercise = this.addExercise.bind(this);
   }
@@ -65,36 +84,46 @@ class WODactive extends Component {
     const id = this.state.id;
     console.log("user id", id)
     console.log("finished exercise1", this.state.finishedExercises[0]);
+    const { classes } = this.props;
     return (
-        <div>
+      <React.Fragment>
           <Navbar />
-          <h1>Here's your workout</h1>
-          <p>
-            Lift heavy stuff
-          </p>
-          <DisplayExercises />
-          <WODForm 
-          addExercise={this.addExercise}/>
-          <ul>
-          {this.state.finishedExercises.map(exercise => (
-            <li key={exercise.id}>
-              Exercise: {exercise.name}
-              <br/>
-              Sets: {exercise.sets}
-              <br/>
-              Reps: {exercise.reps}
-              <br/>
-              Weight: {exercise.weight}
-              <br/>
-            </li>
-            ))}
-            <br/>
-          </ul>
-          <button onClick={()=> {this.handleFormSubmit(id)}}><Link to="/dashboard">Save workout</Link></button>
+          <div className={classes.root}>
+            <p className="vid_header">Here's your workout</p>
+            <Grid container spacing={24}>
+              <Grid item xs={4} className={classes.leftBox}>
+                <DisplayExercises />
+              </Grid>
+              <Grid item xs={8} className={classes.rightBox}>
+              <WODForm 
+                addExercise={this.addExercise}/>
+              <ul>
+              {this.state.finishedExercises.map(exercise => (
+                <li key={exercise.id}>
+                  Exercise: {exercise.name}
+                  <br/>
+                  Sets: {exercise.sets}
+                  <br/>
+                  Reps: {exercise.reps}
+                  <br/>
+                  Weight: {exercise.weight}
+                  <br/>
+                </li>
+                ))}
+                <br/>
+              </ul>
+              <button onClick={()=> {this.handleFormSubmit(id)}}><Link to="/dashboard">Save workout</Link></button>
+          </Grid>
+        </Grid>
         </div>
+      </React.Fragment>
       )
     };
   }
+
+  WODactive.propTypes = {
+    classes: PropTypes.object.isRequired
+  };
     
 
-export default WODactive;
+export default withStyles(styles)(WODactive);

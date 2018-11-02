@@ -237,14 +237,14 @@ const findWeight = async function(id, data, purpose) {
             }
             function purposeWeight(weight) {
                 if (purpose === "speed") {
-                    datum.weight = round5(weight * 0.40);
-                    datum.reps = "3-5";
+                    datum.weight = round5(weight * 0.60);
+                    datum.reps = "3-5 with each rep at max speed";
                 } else if (purpose === "strength") {
-                    datum.weight = round5(weight * 0.75);
-                    datum.reps = "6-10";
+                    datum.weight = round5(weight * 0.82);
+                    datum.reps = "4-6";
                 } else if (purpose === "sculpt") {
                     datum.weight = round5(weight * 0.60);
-                    datum.reps = "10-15";
+                    datum.reps = "10-15 or to failure";
                 }
             }
     
