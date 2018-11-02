@@ -4,7 +4,6 @@ import ORForm from "../OneRepForm";
 import Navbar from "../Navbar";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import "./OneRepAssessPage.css";
 
@@ -16,11 +15,9 @@ const styles = theme => ({
     height: "100vh"
   },
   leftBox: {
-    backgroundColor:"gray",
     height:"100vh",
   },
   rightBox: {
-    backgroundColor:"lightgray",
     height:"100vh",
   },
 });
@@ -34,7 +31,7 @@ function Assessment(props) {
     <div className="ora_container">
       {/* start header  */}
       <div >
-        <p className="ora_header">Assessment Page</p>
+        <p className="ora_header">Update your self assessment</p>
         {/* end header */}
       </div>
       <Grid container spacing={24}>

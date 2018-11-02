@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import UserProfile from "../ProfileCard";
 import Navbar from "../Navbar";
@@ -16,11 +15,9 @@ const styles = theme => ({
     height: "100vh"
   },
   leftBox: {
-    backgroundColor:"gray",
     height:"100vh",
   },
   rightBox: {
-    backgroundColor:"lightgray",
     height:"100vh",
   },
 });
@@ -31,7 +28,7 @@ function Dash(props) {
     <React.Fragment>
       <Navbar />
       <div className={classes.root}>
-        <p className="vid_header">Dashboard</p>
+        <p className="dash_header">Dashboard</p>
         <Grid container spacing={24}>
           <Grid item xs={4} className={classes.leftBox}>
             <UserProfile />
