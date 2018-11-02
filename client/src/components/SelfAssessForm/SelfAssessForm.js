@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import "./SelfAssessForm.css";
 import API from "../utils/API";
 import auth0Client from "../Auth";
-import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import { Link } from "react-router-dom";
+
 
 const styles = theme => ({
   container: {
@@ -31,9 +32,14 @@ class SAForm extends Component {
       bench: "",
       squat: "",
       weight: "",
-      id: auth0Client.getUserId()
+      id: ""
     };
     
+    componentDidMount() {
+      if(auth0Client.isAuthenticated()){
+        this.setState({id:auth0Client.getUserId()});
+      }
+    }
   handleInputChange = event => {
 
     let value = event.target.value;
@@ -48,7 +54,9 @@ class SAForm extends Component {
       } 
     };
 
-  handleFormSubmit = id => {
+  handleFormSubmit = (id
+   , e) => {
+     e.preventDefault()
     if (this.state.bench && this.state.squat && this.state.weight) {
           API.estimateOneRep(id,
           {
@@ -57,11 +65,9 @@ class SAForm extends Component {
             weight: parseInt(this.state.weight)
           })
           .catch(err => console.log(err));
-            
         } else {
           alert("Fill out your max reps please!");
         }
-    
   };
 
   render() {
@@ -121,7 +127,7 @@ class SAForm extends Component {
             placeholder="Your body weight!"
           />
           <br/>
-          <button onClick={() =>{this.handleFormSubmit(id)}}><Link to="/dashboard">Submit</Link></button>
+          <Link to="/dashboard"><button onClick={(e) =>{this.handleFormSubmit(id, e)}}>Submit</button></Link>
         </form>
       </div>
     );

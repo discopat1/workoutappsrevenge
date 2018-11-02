@@ -10,6 +10,7 @@ class Auth {
       audience: 'https://workoutapp.auth0.com/userinfo',
       clientID: 'fkSbNMsnAOUII0epY5hnBddf3druZMDb',
       redirectUri: 'https://workoutappsrevenge.herokuapp.com/callback',
+      // redirectUri: 'http://localhost:3000/callback',
       responseType: 'token id_token',
       scope: 'openid profile'
     });
