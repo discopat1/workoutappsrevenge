@@ -10,6 +10,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import "./WODactive.css";
 
+
 const styles = theme => ({
   root: {
     width: "95%",
@@ -32,18 +33,16 @@ class WODactive extends Component {
     super(props)
     this.state = {
     finishedExercises: [],
+    id:""
     }
     this.addExercise = this.addExercise.bind(this);
   }
     
-  componentWillMount() {
+  componentDidMount() {
     if(auth0Client.isAuthenticated()){
-      this.setState({id:auth0Client.getUserId()});}
-    // } else {
-    //   this.setState({id: "5bd6993dc3094a3a0d39b135"})
-    // }
+      this.setState({id:auth0Client.getUserId()});
+    }
   }
-  
   
   addExercise = exercise => {
     console.log("exercise===", exercise)
