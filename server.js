@@ -54,9 +54,9 @@ if (app.get('env') === 'production') {
 
 var strategy = new Auth0Strategy({
   domain: 'workoutapp.auth0.com',
-  clientID: 'uni-ZJF0sZlESyexemvyQ1okpf3zx-Sm',
-  clientSecret: 'Q9omx-09Mvgbv2jwR8yqXLISSFZZRAeuYngQazOrbL4VQOY2JZN-STRWY4ErIL9e',
-  callbackURL: 'https://workoutappsrevenge.herokuapp.com/dashboard',
+  clientID: 'fkSbNMsnAOUII0epY5hnBddf3druZMDb',
+  clientSecret: '_CyS3Rq7O48zQ1TyN3uWlcg1h1awtjhyLnWS_MSygUky9BpCnQnqOYoANFiQNqS1',
+  callbackURL: 'https://workoutappsrevenge.herokuapp.com/callback',
   state: true
 },
 
