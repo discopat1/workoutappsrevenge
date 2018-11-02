@@ -6,6 +6,7 @@ import Grid from "@material-ui/core/Grid";
 import UserProfile from "../ProfileCard";
 import Navbar from "../Navbar";
 import "./Dashboard.css";
+import Table from "../Table";
 
 const styles = theme => ({
   root: {
@@ -33,11 +34,11 @@ function Dash(props) {
         <p className="vid_header">Dashboard</p>
         <Grid container spacing={24}>
           <Grid item xs={4} className={classes.leftBox}>
-            content
+            <UserProfile />
           </Grid>
 
           <Grid item xs={8} className={classes.rightBox}>
-            content
+            <Table />
           </Grid>
         </Grid>
       </div>
