@@ -239,12 +239,15 @@ var controller = {
             console.error(err);
             process.exit(1);
         });
+    },
+    getWorkoutHistory: function(req, res) {
+        console.log(req.body.array)
+        const array = req.body.array;
+        db.WorkoutInput.find({_id: array})
+        .then(dbModel => {console.log("Returned: ", dbModel)
+        res.json(dbModel)
+        }).catch(err => res.status(422).json(err));
     }
-  
-
-
-
-
 };
 
 module.exports = controller

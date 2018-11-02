@@ -27,9 +27,12 @@ export default {
   },
   postWorkoutInput: function(id, input) {
     return axios.post("/api/exercises/WorkoutHistory/" + id, input)
-  },logIn: function() {
-    return axios.get("/auth/auth/login");},
+  },
   findOneRep: function(id) {
     return axios.get("/api/exercises/ActualOneRep/" + id)
+  },
+  findHistory: function(input) {
+        console.log(input)
+    return axios.post("/api/exercises/gethistory", input)
   }
 };
