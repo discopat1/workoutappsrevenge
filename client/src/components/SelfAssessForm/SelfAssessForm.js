@@ -63,6 +63,9 @@ class SAForm extends Component {
             squat: parseInt(this.state.squat),
             weight: parseInt(this.state.weight)
           })
+          .then(()=> {
+            window.location.href="./dashboard"
+          })
           .catch(err => console.log(err));
         } else {
           alert("Fill out your max reps please!");
