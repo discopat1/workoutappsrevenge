@@ -145,7 +145,7 @@ class WODoptions extends Component {
         console.log("purpose,", this.state.purpose);
         localStorage.setItem("exercises", JSON.stringify(exerciseArr));
         sessionStorage.setItem("purpose", this.state.purpose);
-        // window.location.href="/wodactive";
+        window.location.href="/wodactive";
       });
     }
   }
