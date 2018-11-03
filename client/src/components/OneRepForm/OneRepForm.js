@@ -59,6 +59,9 @@ class ORForm extends Component {
         bench: parseInt(this.state.bench),
         squat: parseInt(this.state.squat),
       })
+      .then(()=> {
+        window.location.href="./dashboard"
+      })
       .catch(err => console.log(err));
     } else {
       alert("Fill out your one rep max please!");
