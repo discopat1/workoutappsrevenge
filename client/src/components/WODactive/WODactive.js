@@ -19,11 +19,9 @@ const styles = theme => ({
     height: "100vh"
   },
   leftBox: {
-    backgroundColor:"gray",
     height:"210vh",
   },
   rightBox: {
-    backgroundColor:"lightgray",
     height:"210vh",
   },
 });
