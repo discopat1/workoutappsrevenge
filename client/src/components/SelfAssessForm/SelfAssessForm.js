@@ -54,8 +54,7 @@ class SAForm extends Component {
       } 
     };
 
-  handleFormSubmit = (id
-   , e) => {
+  handleFormSubmit = (id, e) => {
      e.preventDefault()
     if (this.state.bench && this.state.squat && this.state.weight) {
           API.estimateOneRep(id,
