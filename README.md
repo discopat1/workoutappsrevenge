@@ -15,9 +15,9 @@ This is a web applicaiton designed to provide a strength and conditioning workou
 Contact one of the authors directly if interested in contributing :)
 
 # Authors: 
-Patrick Neff - Concept, back-end routing and data managment, some UX/UI
-Robert Smithson - Concept, authorization, UX/UI
-Mark Ishaug - Concept, UX/UI
+* Patrick Neff - Concept, back-end routing and data managment, some UX/UI
+* Robert Smithson - Concept, authorization, UX/UI
+* Mark Ishaug - Concept, UX/UI
 
 # Acknowledgements:
 * Lee Vorthman originally gave me the base idea for this app which I and the other group members took and ran with
