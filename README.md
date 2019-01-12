@@ -1,16 +1,16 @@
 # Workout App
 ![alt text](screenshots/workout-home.png "User Authorization")
-This is a web applicaiton designed to provide a strength and conditioning workout based on a users preferences. 
+#### This is a web applicaiton designed to provide a strength and conditioning workout based on a users preferences. 
 ![alt text](screenshots/workout-auth.png "User Authorization")
-After signing up or logging in the user has the option to input their one rep max for bench press and squat. 
+#### After signing up or logging in the user has the option to input their one rep max for bench press and squat. 
 ![alt text](screenshots/workout-selfassess.png "User Authorization")
-If the user does not know their one rep maxes they can take a max rep test requiring no equipment. After inputing the test values as well as their bodyweight the application will provide estimated one rep maxes for bench press, squat, and deadlift. 
+#### If the user does not know their one rep maxes they can take a max rep test requiring no equipment. After inputing the test values as well as their bodyweight the application will provide estimated one rep maxes for bench press, squat, and deadlift. 
 ![alt text](screenshots/workout-history.png "User Authorization")
-These values will be used later to recommend weights for each exercise. 
+#### These values will be used later to recommend weights for each exercise. 
 ![alt text](screenshots/workout-options.png "User Authorization")
-When the user is ready to workout they can choose their purpose (strength, speed, sculpt), length of their workout, what body parts they'd like to target, and what equipment they have available to them.
+#### When the user is ready to workout they can choose their purpose (strength, speed, sculpt), length of their workout, what body parts they'd like to target, and what equipment they have available to them.
 ![alt text](screenshots/workout-list.png "User Authorization")
-From there a workout complete with sets, reps, and weight is given to the user. After each exercise is the completed the user can input what they did and each workout is saved under their profile.
+#### From there a workout complete with sets, reps, and weight is given to the user. After each exercise is the completed the user can input what they did and each workout is saved under their profile.
 ![alt text](screenshots/workout-list2.png "User Authorization")
 
 # Getting Started:
