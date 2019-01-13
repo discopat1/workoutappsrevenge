@@ -24,12 +24,15 @@ Since this is a MERN stack application you will need the correct technologies on
 
 ## Installation:
 In command line- 'yarn install'
+
 ![alt text](screenshots/yarn-install.png)
 
 ## To Run the Application and Test:
 * Set up a database server by typing 'mongod' in terminal
+
 ![alt text](screenshots/mongod.png)
 * In a separate terminal shell type 'yarn start' to run the application
+
 ![alt text](screenshots/yarn-start.png)
 
 # Deployment:
