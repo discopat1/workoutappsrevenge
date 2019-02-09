@@ -77,6 +77,8 @@
 @media only screen and (max-width: 920px) {
    .spl_headline {
       font-size: 2.5rem;
+      line-height: 1.1;
+      text-align: center;
    }
    .spl_subhead {
       font-size:1.75rem;
